@@ -28,10 +28,8 @@ class Espece
      */
     private $libelle;
     
-    /**
-     *
-     * @ORM\ManyToOne(targetEntity="Animal", inversedBy="espece")
-     * @ORM\JoinColumn(name="id_animal", referencedColumnName="id")
+     /**
+     * @ORM\OneToMany(targetEntity="Animal", mappedBy="espece")
      */
     private $animal;
 

@@ -47,8 +47,11 @@ class Animal
      */
     private $numeroPuce;
 
-     /**
-     * @ORM\OneToMany(targetEntity="Espece", mappedBy="espece")
+  
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="Espece", inversedBy="espece")
+     * @ORM\JoinColumn(name="id_espece", referencedColumnName="id")
      */
     private $espece;
     
@@ -64,12 +67,18 @@ class Animal
      */
     private $idUtilisateurPro;
     
-    /**
+     /**
+     * @var string
      *
-     * @ORM\ManyToOne(targetEntity="Image", inversedBy="image")
-     * @ORM\JoinColumn(name="num_image", referencedColumnName="id")
+     * @ORM\Column(name="image", type="string", length=255, nullable=true)
      */
     private $image;
+     /**
+     * @var date
+     *
+     * @ORM\Column(name="dateNaissance", type="date", length=255, nullable=true)
+     */
+    private $dateNaissance;
     /**
      * Get id
      *
@@ -207,7 +216,15 @@ class Animal
     function setImage($image) {
         $this->image = $image;
     }
+    
 
+    function getDateNaissance() {
+        return $this->dateNaissance;
+    }
+
+    function setDateNaissance($dateNaissance) {
+        $this->dateNaissance = $dateNaissance;
+    }
 
 
 
