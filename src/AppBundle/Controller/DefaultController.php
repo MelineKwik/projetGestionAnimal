@@ -2,9 +2,11 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\Animal;
-use AppBundle\Entity\Espece;
+use AppBundle\Entity\Ek_Animal;
+use AppBundle\Entity\Ek_Espece;
+use AppBundle\Entity\Ek_Personne;
 use AppBundle\Form\AjoutAnimalType;
+use AppBundle\Form\AjoutMembreType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -24,7 +26,7 @@ class DefaultController extends Controller
         ]);
     }
     
-      /**
+    /**
      * @Route("/admin")
      */
     public function adminAction()
@@ -38,23 +40,26 @@ class DefaultController extends Controller
     public function accueilAction(Request $request)
     {
        $em = $this -> getDoctrine()->getManager();
-       $repositoryAnimaux= $em ->getRepository(Animal::class);  
-       $repositoryEspece= $em ->getRepository(Espece::class);
+       $repositoryAnimaux= $em ->getRepository(Ek_Animal::class);  
+       $repositoryEspece= $em ->getRepository(Ek_Espece::class);
+       $repositoryPersonne= $em ->getRepository(Ek_Personne::class);
       
-       
+       $Personnes= $repositoryPersonne->findAll();
       $afficheQuery = $em->createQuery(
             'SELECT a.id, a.nom, a.robe, a.poid,a.image, a.numeroPuce, e.libelle, a.dateNaissance
-            FROM AppBundle:Animal a INNER JOIN AppBundle:Espece e WITH a.espece = e.id
+            FROM AppBundle:Ek_Animal a INNER JOIN AppBundle:Ek_Espece e WITH a.espece = e.id
             ' );
        $afficheAnimal = $afficheQuery->getResult();
        
        
-       $user = $this->getUser();
-       $animal = new Animal();
+      
+       $animal = new Ek_Animal();
+      
        $form = $this -> createForm(AjoutAnimalType::class,$animal);
        $form->handleRequest($request);
        
-       if ($form->isSubmitted() && $form->isValid()) {
+       if ($form->isSubmitted() && $form->isValid()) 
+        {
              
            $file =  $animal->getImage();
            $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
@@ -63,52 +68,41 @@ class DefaultController extends Controller
                 $fileName
             );
             $animal->setImage($fileName);
-            $animal->setIdUtilisateurPro($user);
+            
+            
+            
             $em = $this -> getDoctrine()->getManager();
-         
             $em->persist($animal);
-     
             $em->flush();
+            $idanimal = $animal->getId();
            
-        return $this->redirectToRoute('accueil');
+            return $this->redirectToRoute('accueil');
      
-       }
-       
-      
-       
-         return $this->render('accueilAdmin.html.twig', array(
+        }
+        
+       $filtre = $this -> createForm(AjoutMembreType::class);
+       $filtre->handleRequest($request);
+       if ($form->isSubmitted() && $filtre->isValid()) 
+        {}
+        
+        
+     return $this->render('Ek_Dashboard.html.twig', array(
              'animaux' =>$afficheAnimal,
              'form' => $form->createView(),
+             'personnes' => $Personnes,
+             'filtre' => $filtre->createView(),
+             
          
            
         ));
-    }
-    private function generateUniqueFileName()
+     
+       }
+     private function generateUniqueFileName()
     {
         return md5(uniqid());
     }
     
-       /**
-     * @Route("/modifierAnimaux/{id}", name="modifierAnimaux")
-     */
-    public function afficheAnimaux(Request $request, $id){
-       $em = $this -> getDoctrine()->getManager();
-        $animaux = $em->getRepository(Animal::class)->find($id);
-       $animal = new Animal();
-       $form = $this -> createForm(AjoutAnimalType::class,$animaux);
-       
-       
-  
-     
     
-
-       
-      
+    
         
-       return $this->redirectToRoute('accueil', array(
-             'form' =>$form->createView(),
-             
-           
-        ));
-    }
 }

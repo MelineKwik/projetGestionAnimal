@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+{% block body %}
+{{ form_start(form3) }}
+                                 <div>
+                                     <h2>Traitement</h2>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Symptôme détecté</label>
+                                    {{ form_widget(form3.produit) }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Date de début de traitement</label>
+                                    {{ form_widget(form3.date) }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Date de Fin de traitement</label>
+                                    {{ form_widget(form3.dateSuivante) }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Montant du traitement</label>
+                                    {{ form_widget(form3.montant) }}
+                                </div>
+                                
+                                 <button type="submit" class="btn btn-primary">Enregister</button>
+                                 </div>
+                                 {{form_end(form3)}}
+                                </div>{# empty Twig template #}
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html.twig" %}
+{% block body %}
+{{ form_start(form) }}
+                                 <div>
+                                     <h2>Ajouter une Famille d'accueil</h2>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Nom :</label>
+                                    {{ form_widget(form.nom) }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Prénom :</label>
+                                    {{ form_widget(form.prenom) }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Adresse :</label>
+                                    {{ form_widget(form.adresse) }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Code Postale</label>
+                                    {{ form_widget(form.codePostale) }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Téléphone :</label>
+                                    {{ form_widget(form.telephone) }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Rôle :</label>
+                                    {{ form_widget(form.roles) }}
+                                </div> 
+                                <div class="form-group">
+                                    <label for="inputAddress2">Date de départ :</label>
+                                    {{ form_widget(form.dateDepart) }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Spécification :</label>
+                                    {{ form_widget(form.specificiter) }}
+                                </div>
+                                 <button type="submit" class="btn btn-primary">Enregister</button>
+                                 </div>
+                                 {{form_end(form)}}
+                                </div>{# empty Twig template #}
+{% endblock %}

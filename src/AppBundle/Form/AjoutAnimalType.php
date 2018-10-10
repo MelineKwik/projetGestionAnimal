@@ -29,20 +29,27 @@ class AjoutAnimalType extends AbstractType {
         $builder->add('nom')->add('robe', TextareaType::class)->add('image', FileType::class, array('label' => 'image (JPEG file)', 'data_class' => null))
                 ->add('poid',NumberType::class)->add('numeroPuce')
                 ->add('espece', EntityType::class, array(
-                    'class' => 'AppBundle\Entity\Espece',
+                    'class' => 'AppBundle\Entity\Ek_Espece',
                     'choice_label' => 'libelle', 
                     'expanded' =>false, 
                     'multiple'=>false
                     
-                ))->add('dateNaissance', DateType::class);
-         
+                    
+                )) ->add('dateNaissance', DateType::class)->add('idUtilisateurPro', EntityType::class, array(
+                    'class' => 'AppBundle\Entity\Ek_Personne',
+                    'choice_label' => 'nom', 
+                    'expanded' =>false, 
+                    'multiple'=>false
+                    
+                    
+                )) ;
     }/**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Animal'
+            'data_class' => 'AppBundle\Entity\Ek_Animal'
         ));
     }
 

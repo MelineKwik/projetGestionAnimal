@@ -36,6 +36,7 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    form_themes: ['bootstrap_4_layout.html.twig']
 
 # Doctrine Configuration
 doctrine:
@@ -70,7 +71,7 @@ swiftmailer:
 fos_user:
     db_driver: orm 
     firewall_name: main
-    user_class: AppBundle\Entity\Personne
+    user_class: AppBundle\Entity\Ek_Personne
     service: 
         mailer: fos_user.mailer.twig_swift
     from_email:

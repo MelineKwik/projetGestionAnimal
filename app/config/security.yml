@@ -3,9 +3,11 @@ security:
         FOS\UserBundle\Model\UserInterface: bcrypt
 
     role_hierarchy:
-        ROLE_ADMIN:       ROLE_USER
+        ROLE_ADMIN:       [ROLE_USER,ROLE_FAMILLE,ROLE_VETERINAIRE,ROLE_TRANSPORTEUR]
         ROLE_SUPER_ADMIN: ROLE_ADMIN
-        
+        ROLE_FAMILLE: ROLE_FAMILLE
+        ROLE_VETERINAIRE: ROLE_VETERINAIRE
+        ROLE_TRANSPORTEUR:  ROLE_TRANSPORTEUR
     providers:
         fos_userbundle:
             id: fos_user.user_provider.username
