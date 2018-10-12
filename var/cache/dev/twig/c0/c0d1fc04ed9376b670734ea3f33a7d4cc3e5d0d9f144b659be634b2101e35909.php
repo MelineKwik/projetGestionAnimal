@@ -136,7 +136,10 @@ class __TwigTemplate_6e6be28e72d1c70f2c4bbb7219ff2a354bec3d5e78339d762a31caf5414
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("/images/syringe.png"), "html", null, true);
             echo "\" ></a></td>
 
-
+                               <td><button type=\"submit\" class=\"btn btn-primary\"><a href=\"";
+            // line 44
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("formulaire", array("id" => $this->getAttribute($context["animal"], "id", array()))), "html", null, true);
+            echo "\" >Evènement</a></button></td>
                                <td><button type=\"submit\" class=\"btn btn-primary\">Fiche suivi</button></td>
                            </tr>
                             ";
@@ -147,6 +150,95 @@ class __TwigTemplate_6e6be28e72d1c70f2c4bbb7219ff2a354bec3d5e78339d762a31caf5414
         // line 48
         echo "                      </tbody>
                     </table>
+                       <a class=\"btn btn-primary \" data-toggle=\"modal\" data-target=\"#myModal\"><img src=\"";
+        // line 50
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("/images/animal-prints.png"), "html", null, true);
+        echo "\" > Ajouter un animal</a>
+                       <div class=\"modal fade\" id=\"myModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
+                            <div class=\"modal-dialog\">
+                                <div class=\"modal-content\">
+                                    <div class=\"modal-header\">
+                                        <h4 class=\"modal-title\" id=\"myModalLabel\">Ajouter un animal</h4>
+                                        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>
+                                    </div>
+                                    <div class=\"modal-body\">
+
+                                            ";
+        // line 60
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start');
+        echo "
+                                            <div class=\"form-row\">
+                                              <div class=\"form-group col-md-6\">
+                                                <label for=\"inputEmail4\">Nom</label>
+                                                 ";
+        // line 64
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "nom", array()), 'widget', array("attr" => array("class" => "form-control")));
+        echo "
+                                              </div>
+                                              <div class=\"form-group col-md-6\">
+                                                <label for=\"inputPassword4\">Robe</label>
+                                                 ";
+        // line 68
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "robe", array()), 'widget', array("attr" => array("class" => "form-control")));
+        echo "
+                                              </div>
+
+                                            </div>
+                                            <div class=\"form-group\">
+                                              <label for=\"inputAddress\">Poid</label>
+                                              ";
+        // line 74
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "poid", array()), 'widget', array("attr" => array("class" => "form-control")));
+        echo "
+                                            </div>
+                                            <div class=\"form-group\">
+                                              <label for=\"inputAddress2\">Puce</label>
+                                             ";
+        // line 78
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "numeroPuce", array()), 'widget', array("attr" => array("class" => "form-control")));
+        echo "
+                                            </div>
+                                            <div class=\"form-row\">
+                                              <div class=\"form-group col-md-6\">
+                                                <label for=\"inputCity\">Photo</label>
+                                                ";
+        // line 83
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "image", array()), 'widget', array("attr" => array("class" => "form-control")));
+        echo "
+                                              </div>
+                                              <div class=\"form-group col-md-4\">
+                                                <label for=\"inputState\">Espèce</label>
+
+                                                   ";
+        // line 88
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "espece", array()), 'widget', array("attr" => array("class" => "form-control")));
+        echo "
+
+                                              </div>
+                                              <div class=\"form-group\">
+                                                <label for=\"inputAddress2\">Date de naissance</label>
+                                                ";
+        // line 93
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "dateNaissance", array()), 'widget');
+        echo "
+                                            </div>
+                                            <div class=\"form-group\">
+                                                <label for=\"inputAddress2\">Famille</label>
+                                                ";
+        // line 97
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "nom", array()), 'widget');
+        echo "
+                                            </div>
+                                             <button type=\"submit\" class=\"btn btn-primary \">Enregister</button>
+                                            ";
+        // line 100
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
+        echo "
+                                        </div>
+                                    </div>
+                             </div>
+                        </div>
+                     </div>
                   </div>
                 </div>
               </div>
@@ -231,7 +323,7 @@ class __TwigTemplate_6e6be28e72d1c70f2c4bbb7219ff2a354bec3d5e78339d762a31caf5414
 
     public function getDebugInfo()
     {
-        return array (  148 => 48,  134 => 42,  128 => 41,  122 => 40,  116 => 39,  112 => 38,  107 => 36,  103 => 35,  99 => 34,  95 => 33,  91 => 32,  87 => 31,  83 => 30,  80 => 29,  76 => 28,  49 => 3,  40 => 2,  11 => 1,);
+        return array (  235 => 100,  229 => 97,  222 => 93,  214 => 88,  206 => 83,  198 => 78,  191 => 74,  182 => 68,  175 => 64,  168 => 60,  155 => 50,  151 => 48,  141 => 44,  134 => 42,  128 => 41,  122 => 40,  116 => 39,  112 => 38,  107 => 36,  103 => 35,  99 => 34,  95 => 33,  91 => 32,  87 => 31,  83 => 30,  80 => 29,  76 => 28,  49 => 3,  40 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -287,12 +379,68 @@ class __TwigTemplate_6e6be28e72d1c70f2c4bbb7219ff2a354bec3d5e78339d762a31caf5414
                                <td><a href=\"{{ path('ajoutTraitement',{ id : animal.id }) }}\" ><img src=\"{{ asset('/images/spray.png') }}\" ></a></button></td>
                                <td><a href=\"{{ path('ajoutVaccination',{ id : animal.id }) }}\" ><img src=\"{{ asset('/images/syringe.png') }}\" ></a></td>
 
-
+                               <td><button type=\"submit\" class=\"btn btn-primary\"><a href=\"{{ path('formulaire',{ id : animal.id })}}\" >Evènement</a></button></td>
                                <td><button type=\"submit\" class=\"btn btn-primary\">Fiche suivi</button></td>
                            </tr>
                             {% endfor %}
                       </tbody>
                     </table>
+                       <a class=\"btn btn-primary \" data-toggle=\"modal\" data-target=\"#myModal\"><img src=\"{{ asset('/images/animal-prints.png') }}\" > Ajouter un animal</a>
+                       <div class=\"modal fade\" id=\"myModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
+                            <div class=\"modal-dialog\">
+                                <div class=\"modal-content\">
+                                    <div class=\"modal-header\">
+                                        <h4 class=\"modal-title\" id=\"myModalLabel\">Ajouter un animal</h4>
+                                        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>
+                                    </div>
+                                    <div class=\"modal-body\">
+
+                                            {{ form_start(form) }}
+                                            <div class=\"form-row\">
+                                              <div class=\"form-group col-md-6\">
+                                                <label for=\"inputEmail4\">Nom</label>
+                                                 {{ form_widget(form.nom, {'attr':{'class':'form-control'}}) }}
+                                              </div>
+                                              <div class=\"form-group col-md-6\">
+                                                <label for=\"inputPassword4\">Robe</label>
+                                                 {{ form_widget(form.robe, {'attr':{'class':'form-control'}}) }}
+                                              </div>
+
+                                            </div>
+                                            <div class=\"form-group\">
+                                              <label for=\"inputAddress\">Poid</label>
+                                              {{ form_widget(form.poid, {'attr':{'class':'form-control'}}) }}
+                                            </div>
+                                            <div class=\"form-group\">
+                                              <label for=\"inputAddress2\">Puce</label>
+                                             {{ form_widget(form.numeroPuce, {'attr':{'class':'form-control'}}) }}
+                                            </div>
+                                            <div class=\"form-row\">
+                                              <div class=\"form-group col-md-6\">
+                                                <label for=\"inputCity\">Photo</label>
+                                                {{ form_widget(form.image, {'attr':{'class':'form-control'}}) }}
+                                              </div>
+                                              <div class=\"form-group col-md-4\">
+                                                <label for=\"inputState\">Espèce</label>
+
+                                                   {{ form_widget(form.espece, {'attr':{'class':'form-control'}}) }}
+
+                                              </div>
+                                              <div class=\"form-group\">
+                                                <label for=\"inputAddress2\">Date de naissance</label>
+                                                {{ form_widget(form.dateNaissance) }}
+                                            </div>
+                                            <div class=\"form-group\">
+                                                <label for=\"inputAddress2\">Famille</label>
+                                                {{ form_widget(form.nom) }}
+                                            </div>
+                                             <button type=\"submit\" class=\"btn btn-primary \">Enregister</button>
+                                            {{form_end(form)}}
+                                        </div>
+                                    </div>
+                             </div>
+                        </div>
+                     </div>
                   </div>
                 </div>
               </div>

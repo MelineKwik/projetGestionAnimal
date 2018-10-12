@@ -46,6 +46,11 @@ class __TwigTemplate_654b9017e0b6910f308a2c571036ea3a830b8b1b89c14e14933b9dcf3b0
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
+        echo "    <div class=\"content\">
+        <div class=\"container-fluid\">
+          <div class=\"row\">
+";
+        // line 6
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form2"]) ? $context["form2"] : $this->getContext($context, "form2")), 'form_start');
         echo "
                                  <div>
@@ -53,42 +58,42 @@ class __TwigTemplate_654b9017e0b6910f308a2c571036ea3a830b8b1b89c14e14933b9dcf3b0
                                 <div class=\"form-group\">
                                     <label for=\"inputAddress2\">Symptôme détecté</label>
                                     ";
-        // line 8
+        // line 11
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form2"]) ? $context["form2"] : $this->getContext($context, "form2")), "symptome", array()), 'widget');
         echo "
                                 </div>
                                 <div class=\"form-group\">
                                     <label for=\"inputAddress2\">Maladie</label>
                                     ";
-        // line 12
+        // line 15
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form2"]) ? $context["form2"] : $this->getContext($context, "form2")), "maladie", array()), 'widget');
         echo "
                                 </div>
                                 <div class=\"form-group\">
                                     <label for=\"inputAddress2\">Type de traitement</label>
                                     ";
-        // line 16
+        // line 19
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form2"]) ? $context["form2"] : $this->getContext($context, "form2")), "traitement", array()), 'widget');
         echo "
                                 </div>
                                 <div class=\"form-group\">
                                     <label for=\"inputAddress2\">Date de début de traitement</label>
                                     ";
-        // line 20
+        // line 23
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form2"]) ? $context["form2"] : $this->getContext($context, "form2")), "date", array()), 'widget');
         echo "
                                 </div>
                                 <div class=\"form-group\">
                                     <label for=\"inputAddress2\">Date de Fin de traitement</label>
                                     ";
-        // line 24
+        // line 27
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form2"]) ? $context["form2"] : $this->getContext($context, "form2")), "dateSuivante", array()), 'widget');
         echo "
                                 </div>
                                 <div class=\"form-group\">
                                     <label for=\"inputAddress2\">Montant du traitement</label>
                                     ";
-        // line 28
+        // line 31
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form2"]) ? $context["form2"] : $this->getContext($context, "form2")), "montant", array()), 'widget');
         echo "
                                 </div>
@@ -96,10 +101,13 @@ class __TwigTemplate_654b9017e0b6910f308a2c571036ea3a830b8b1b89c14e14933b9dcf3b0
                                  <button type=\"submit\" class=\"btn btn-primary\">Enregister</button>
                                  </div>
                                  ";
-        // line 33
+        // line 36
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form2"]) ? $context["form2"] : $this->getContext($context, "form2")), 'form_end');
         echo "
-                                </div>";
+                                </div>
+                                 </div>
+                                 </div>
+                                 </div>";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -120,7 +128,7 @@ class __TwigTemplate_654b9017e0b6910f308a2c571036ea3a830b8b1b89c14e14933b9dcf3b0
 
     public function getDebugInfo()
     {
-        return array (  100 => 33,  92 => 28,  85 => 24,  78 => 20,  71 => 16,  64 => 12,  57 => 8,  49 => 3,  40 => 2,  11 => 1,);
+        return array (  105 => 36,  97 => 31,  90 => 27,  83 => 23,  76 => 19,  69 => 15,  62 => 11,  54 => 6,  49 => 3,  40 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -135,6 +143,9 @@ class __TwigTemplate_654b9017e0b6910f308a2c571036ea3a830b8b1b89c14e14933b9dcf3b0
     {
         return new Twig_Source("{% extends \"base.html.twig\" %}
 {% block body %}
+    <div class=\"content\">
+        <div class=\"container-fluid\">
+          <div class=\"row\">
 {{ form_start(form2) }}
                                  <div>
                                      <h2>Traitement</h2>
@@ -166,7 +177,10 @@ class __TwigTemplate_654b9017e0b6910f308a2c571036ea3a830b8b1b89c14e14933b9dcf3b0
                                  <button type=\"submit\" class=\"btn btn-primary\">Enregister</button>
                                  </div>
                                  {{form_end(form2)}}
-                                </div>{# empty Twig template #}
+                                </div>
+                                 </div>
+                                 </div>
+                                 </div>{# empty Twig template #}
 {% endblock %}", "Ek_addTraitement.html.twig", "C:\\Users\\ekichenin.cdi\\Documents\\NetBeansProjects\\GestionAnimal\\app\\Resources\\views\\Ek_addTraitement.html.twig");
     }
 }

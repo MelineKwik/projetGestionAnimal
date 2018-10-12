@@ -248,6 +248,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        // formulaire
+        if (0 === strpos($pathinfo, '/formulaire') && preg_match('#^/formulaire/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'formulaire')), array (  '_controller' => 'AppBundle\\Controller\\Ek_AffichageController::formulaireAction',));
+        }
+
         // modifierAnimaux
         if (0 === strpos($pathinfo, '/modifierAnimaux') && preg_match('#^/modifierAnimaux/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'modifierAnimaux')), array (  '_controller' => 'AppBundle\\Controller\\Ek_ModifierController::modifierAnimauxAction',));

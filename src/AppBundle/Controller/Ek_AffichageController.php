@@ -13,14 +13,20 @@ use AppBundle\Entity\Ek_Animal;
 use AppBundle\Entity\Ek_Espece;
 use AppBundle\Entity\Ek_Famille;
 use AppBundle\Entity\Ek_Personne;
+use AppBundle\Entity\Ek_Traitement;
 use AppBundle\Entity\Ek_Transporteur;
+use AppBundle\Entity\Ek_Vaccination;
 use AppBundle\Entity\Ek_Veterinaire;
+use AppBundle\Entity\Ek_Visite;
 use AppBundle\Form\AjoutMembreType;
 use AppBundle\Form\Ek_AdminType;
 use AppBundle\Form\Ek_AnimalType;
 use AppBundle\Form\Ek_FamilleType;
+use AppBundle\Form\Ek_TraitementType;
 use AppBundle\Form\Ek_TransporteurType;
+use AppBundle\Form\Ek_VaccinationType;
 use AppBundle\Form\Ek_VeterinaireType;
+use AppBundle\Form\Ek_VisiteType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -116,7 +122,7 @@ class Ek_AffichageController extends Controller {
        $repositoryPersonne= $em ->getRepository(Ek_Personne::class);
       
        $Personnes= $repositoryPersonne->findAll();
-      $afficheQuery = $em->createQuery(
+       $afficheQuery = $em->createQuery(
             'SELECT a.id, a.nom, a.robe, a.poid,a.image, a.numeroPuce, e.libelle, a.dateNaissance
             FROM AppBundle:Ek_Animal a INNER JOIN AppBundle:Ek_Espece e WITH a.espece = e.id
             ' );
@@ -171,5 +177,64 @@ class Ek_AffichageController extends Controller {
      private function generateUniqueFileName()
     {
         return md5(uniqid());
+    }
+    
+    /**
+     * @Route("/formulaire/{id}", name="formulaire")
+     */
+    public function formulaireAction(Request $request, $id)
+    {
+        $em = $this -> getDoctrine()->getManager();
+        $animal = $em->getRepository(Ek_Animal::class)->find($id);
+        
+        $visite = $em->getRepository(Ek_Visite::class);
+        $visite = new Ek_Visite();
+        $form1 = $this -> createForm(Ek_VisiteType::class,$visite);
+        $form1->handleRequest($request);
+       if ($form1->isSubmitted() && $form1->isValid()) {
+             
+         
+            $visite->setAnimal($animal);
+            $em->persist($visite);
+            $em->flush();
+           
+        return $this->redirectToRoute('accueil');
+     
+       }
+       $traitement = $em->getRepository(Ek_Traitement::class);
+        $traitement = new Ek_Traitement();
+        $form2 = $this -> createForm(Ek_TraitementType::class,$traitement);
+        $form2->handleRequest($request);
+       if ($form2->isSubmitted() && $form2->isValid()) {
+             
+         
+            $traitement->setAnimal($animal);
+            $em->persist($traitement);
+            $em->flush();
+           
+        return $this->redirectToRoute('accueil');
+     
+       }
+       
+       $vaccin = $em->getRepository(Ek_Vaccination::class);
+        $vaccin = new Ek_Vaccination();
+        $form3 = $this -> createForm(Ek_VaccinationType::class,$vaccin);
+        $form3->handleRequest($request);
+       if ($form3->isSubmitted() && $form3->isValid()) {
+             
+         
+            $vaccin->setAnimal($animal);
+            $em->persist($vaccin);
+            $em->flush();
+           
+        return $this->redirectToRoute('accueil');
+     
+       }
+     
+        return $this->render('formulaireEvenement.html.twig', array(
+            'form1' =>$form1->createView(),
+            'form2' =>$form2->createView(),
+            'form3' =>$form3->createView(),
+         ));
     }
 }

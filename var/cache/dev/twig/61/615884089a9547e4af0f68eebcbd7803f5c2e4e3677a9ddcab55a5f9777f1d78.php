@@ -46,6 +46,11 @@ class __TwigTemplate_e054a37d45fde3a18c38818977fc48cb60b4d8b94c82618e8b38f78ca09
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
+        echo "    <div class=\"content\">
+        <div class=\"container-fluid\">
+          <div class=\"row\">
+";
+        // line 6
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form1"]) ? $context["form1"] : $this->getContext($context, "form1")), 'form_start');
         echo "
                                  <div>
@@ -53,28 +58,28 @@ class __TwigTemplate_e054a37d45fde3a18c38818977fc48cb60b4d8b94c82618e8b38f78ca09
                                 <div class=\"form-group\">
                                     <label for=\"inputAddress2\">Date de la visite</label>
                                     ";
-        // line 8
+        // line 11
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form1"]) ? $context["form1"] : $this->getContext($context, "form1")), "date", array()), 'widget');
         echo "
                                 </div>
                                 <div class=\"form-group\">
                                     <label for=\"inputAddress2\">Prochaine date de visite</label>
                                     ";
-        // line 12
+        // line 15
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form1"]) ? $context["form1"] : $this->getContext($context, "form1")), "dateSuivante", array()), 'widget');
         echo "
                                 </div>
                                 <div class=\"form-group\">
                                     <label for=\"inputAddress2\">Montant de la visite</label>
                                     ";
-        // line 16
+        // line 19
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form1"]) ? $context["form1"] : $this->getContext($context, "form1")), "montant", array()), 'widget');
         echo "
                                 </div>
                                 <div class=\"form-group\">
                                     <label for=\"inputAddress2\">Bilan de la visite</label>
                                     ";
-        // line 20
+        // line 23
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form1"]) ? $context["form1"] : $this->getContext($context, "form1")), "bilan", array()), 'widget');
         echo "
                                 </div>
@@ -82,10 +87,15 @@ class __TwigTemplate_e054a37d45fde3a18c38818977fc48cb60b4d8b94c82618e8b38f78ca09
                                  <button type=\"submit\" class=\"btn btn-primary\">Enregister</button>
                                  </div>
                                  ";
-        // line 25
+        // line 28
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form1"]) ? $context["form1"] : $this->getContext($context, "form1")), 'form_end');
         echo "
                                 </div>";
+        // line 30
+        echo "        </div>
+    </div>
+                          
+";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -106,7 +116,7 @@ class __TwigTemplate_e054a37d45fde3a18c38818977fc48cb60b4d8b94c82618e8b38f78ca09
 
     public function getDebugInfo()
     {
-        return array (  86 => 25,  78 => 20,  71 => 16,  64 => 12,  57 => 8,  49 => 3,  40 => 2,  11 => 1,);
+        return array (  95 => 30,  91 => 28,  83 => 23,  76 => 19,  69 => 15,  62 => 11,  54 => 6,  49 => 3,  40 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -121,6 +131,9 @@ class __TwigTemplate_e054a37d45fde3a18c38818977fc48cb60b4d8b94c82618e8b38f78ca09
     {
         return new Twig_Source("{% extends \"base.html.twig\" %}
 {% block body %}
+    <div class=\"content\">
+        <div class=\"container-fluid\">
+          <div class=\"row\">
 {{ form_start(form1) }}
                                  <div>
                                      <h2>Visite</h2>
@@ -145,6 +158,9 @@ class __TwigTemplate_e054a37d45fde3a18c38818977fc48cb60b4d8b94c82618e8b38f78ca09
                                  </div>
                                  {{form_end(form1)}}
                                 </div>{# empty Twig template #}
+        </div>
+    </div>
+                          
 {% endblock %}", "Ek_addVisite.html.twig", "C:\\Users\\ekichenin.cdi\\Documents\\NetBeansProjects\\GestionAnimal\\app\\Resources\\views\\Ek_addVisite.html.twig");
     }
 }

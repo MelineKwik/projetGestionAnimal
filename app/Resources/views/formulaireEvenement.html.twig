@@ -1,0 +1,137 @@
+{% extends "base.html.twig" %}
+ {% block javascripts %}
+     <script>
+           $(document).on('click', 'input[name="visite"]:checkbox', function(){
+               /*alert('clicked');*/
+               $('#visiteValue').toggle('slow');
+           });
+            $(document).on('click', 'input[name="vaccination"]:checkbox', function(){
+               /*alert('clicked');*/
+               $('#vaccinationValue').toggle();
+           });
+            $(document).on('click', 'input[name="traitement"]:checkbox', function(){
+               /*alert('clicked');*/
+               $('#traitementValue').toggle();
+           });
+       
+      </script>
+ {% endblock %}
+{% block body %}
+     <div class="content">
+        <div class="container-fluid">
+          <div>
+              <form>
+              <table  class="table table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col"><label for="visite" class="form-check-label">Visite</label></th>
+                    <th scope="col"> <label for="vaccination" class="form-check-label">Vaccination</label></th>
+                    <th scope="col"><label for="traitement" class="form-check-label">Traitement</label></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><input type="checkbox" id="visite" name="visite" value="visite"  ></td>
+                    <td><input type="checkbox" id="vaccination" name="vaccination" value="vaccination"></td>
+                    <td><input type="checkbox" id="traitement" name="traitement" value="traitement"></td>
+                  </tr>
+                </tbody>
+              </table>
+              </form>
+          </div>
+              <div id="visiteValue" style="display:none">
+                  {{ form_start(form1) }}
+                                 <div>
+                                     <h2>Visite</h2>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Date de la visite</label>
+                                    {{ form_widget(form1.date) }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Prochaine date de visite</label>
+                                    {{ form_widget(form1.dateSuivante) }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Montant de la visite</label>
+                                    {{ form_widget(form1.montant) }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Bilan de la visite</label>
+                                    {{ form_widget(form1.bilan) }}
+                                </div>
+                              
+                                 <button type="submit" class="btn btn-primary">Enregister</button>
+                                 </div>
+                                 {{form_end(form1)}}
+              </div>
+              <div id="vaccinationValue" style="display:none">
+                  {{ form_start(form3) }}
+                                 <div>
+                                     <h2>Vaccination</h2>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Produit utilisé</label>
+                                    {{ form_widget(form3.produit) }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Date de début de traitement</label>
+                                    {{ form_widget(form3.date) }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Date de Fin de traitement</label>
+                                    {{ form_widget(form3.dateSuivante) }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Montant du traitement</label>
+                                    {{ form_widget(form3.montant) }}
+                                </div>
+                                
+                                 <button type="submit" class="btn btn-primary">Enregister</button>
+                                 </div>
+                                 {{form_end(form3)}}
+              </div>
+              <div id="traitementValue" style="display:none">  
+              {{ form_start(form2) }}
+                                 <div>
+                                     <h2>Traitement</h2>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Symptôme détecté</label>
+                                    {{ form_widget(form2.symptome) }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Maladie</label>
+                                    {{ form_widget(form2.maladie) }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Type de traitement</label>
+                                    {{ form_widget(form2.traitement) }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Date de début de traitement</label>
+                                    {{ form_widget(form2.date) }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Date de Fin de traitement</label>
+                                    {{ form_widget(form2.dateSuivante) }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Montant du traitement</label>
+                                    {{ form_widget(form2.montant) }}
+                                </div>
+                                
+                                 <button type="submit" class="btn btn-primary">Enregister</button>
+                                 </div>
+                                 {{form_end(form2)}}
+            </div>
+          </div>
+        </div>
+     </div>
+        
+    
+              
+              
+            
+              
+              
+
+         
+{% endblock %}
