@@ -24,6 +24,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AjouterEvenementController extends Controller {
        /**
      * @Route("/ajoutEvenement/{id}", name="ajoutEvenement")
+     * 
      */
     public function ajoutEvenement(Request $request, $id){
         

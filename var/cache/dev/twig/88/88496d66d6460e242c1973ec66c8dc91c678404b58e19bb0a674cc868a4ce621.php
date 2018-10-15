@@ -52,14 +52,29 @@ class __TwigTemplate_2cfbe38ea5608bc12b72b483729b7cad0b10ec7d38576c28626a7ac2319
             <div class=\"col-lg-3 col-md-6 col-sm-6\">
               <div class=\"card card-stats\">
                 <div class=\"card-header card-header-warning card-header-icon\">
-                  <div class=\"card-icon\">
+                     ";
+        // line 9
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["nombreVeterinaire"]) ? $context["nombreVeterinaire"] : $this->getContext($context, "nombreVeterinaire")));
+        foreach ($context['_seq'] as $context["_key"] => $context["nbVeterinaire"]) {
+            // line 10
+            echo "                  <div class=\"card-icon\">
                     <i class=\"material-icons\">group</i>
                   </div>
                   <p class=\"card-category\">Vétérinaire</p>
-                  <h3 class=\"card-title\">49/50
-                    <small>GB</small>
+                  <h3 class=\"card-title\">";
+            // line 14
+            echo twig_escape_filter($this->env, $this->getAttribute($context["nbVeterinaire"], "nb", array()), "html", null, true);
+            echo "
+                 
                   </h3>
-                </div>
+                  ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['nbVeterinaire'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 18
+        echo "                </div>
                 <div class=\"card-footer\">
                   <div class=\"stats\">
                     <i class=\"material-icons text-danger\">warning</i>
@@ -142,7 +157,7 @@ class __TwigTemplate_2cfbe38ea5608bc12b72b483729b7cad0b10ec7d38576c28626a7ac2319
 
     public function getDebugInfo()
     {
-        return array (  49 => 3,  40 => 2,  11 => 1,);
+        return array (  77 => 18,  67 => 14,  61 => 10,  57 => 9,  49 => 3,  40 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -163,13 +178,15 @@ class __TwigTemplate_2cfbe38ea5608bc12b72b483729b7cad0b10ec7d38576c28626a7ac2319
             <div class=\"col-lg-3 col-md-6 col-sm-6\">
               <div class=\"card card-stats\">
                 <div class=\"card-header card-header-warning card-header-icon\">
+                     {% for nbVeterinaire in nombreVeterinaire%}
                   <div class=\"card-icon\">
                     <i class=\"material-icons\">group</i>
                   </div>
                   <p class=\"card-category\">Vétérinaire</p>
-                  <h3 class=\"card-title\">49/50
-                    <small>GB</small>
+                  <h3 class=\"card-title\">{{nbVeterinaire.nb}}
+                 
                   </h3>
+                  {% endfor %}
                 </div>
                 <div class=\"card-footer\">
                   <div class=\"stats\">

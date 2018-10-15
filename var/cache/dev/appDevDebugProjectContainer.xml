@@ -163,9 +163,6 @@
     <parameter key="security.role_hierarchy.roles" type="collection">
       <parameter key="ROLE_ADMIN" type="collection">
         <parameter>ROLE_USER</parameter>
-        <parameter>ROLE_FAMILLE</parameter>
-        <parameter>ROLE_VETERINAIRE</parameter>
-        <parameter>ROLE_TRANSPORTEUR</parameter>
       </parameter>
       <parameter key="ROLE_SUPER_ADMIN" type="collection">
         <parameter>ROLE_ADMIN</parameter>
@@ -3142,9 +3139,9 @@
         <argument>null</argument>
       </call>
       <call method="add">
-        <argument type="service" id="security.request_matcher.yvrq2ou"/>
+        <argument type="service" id="security.request_matcher.2jd_drb"/>
         <argument type="collection">
-          <argument>ROLE_ADMIN</argument>
+          <argument>IS_AUTHENTICATED_FULLY</argument>
         </argument>
         <argument>null</argument>
       </call>
@@ -3519,8 +3516,8 @@
       <argument type="collection"/>
       <call method="setOptions">
         <argument type="collection">
+          <argument key="default_target_path">accueil</argument>
           <argument key="always_use_default_target_path">false</argument>
-          <argument key="default_target_path">/</argument>
           <argument key="login_path">/login</argument>
           <argument key="target_path_parameter">_target_path</argument>
           <argument key="use_referer">false</argument>
@@ -3620,8 +3617,8 @@
     <service id="security.request_matcher.h4hgfxz" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
       <argument>^/resetting</argument>
     </service>
-    <service id="security.request_matcher.yvrq2ou" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-      <argument>^/*</argument>
+    <service id="security.request_matcher.2jd_drb" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/</argument>
     </service>
     <service id="security.command.user_password_encoder" class="Symfony\Bundle\SecurityBundle\Command\UserPasswordEncoderCommand" public="false">
       <tag name="console.command" command="security:encode-password"/>

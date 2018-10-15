@@ -6,13 +6,15 @@
             <div class="col-lg-3 col-md-6 col-sm-6">
               <div class="card card-stats">
                 <div class="card-header card-header-warning card-header-icon">
+                     {% for nbVeterinaire in nombreVeterinaire%}
                   <div class="card-icon">
                     <i class="material-icons">group</i>
                   </div>
                   <p class="card-category">Vétérinaire</p>
-                  <h3 class="card-title">49/50
-                    <small>GB</small>
+                  <h3 class="card-title">{{nbVeterinaire.nb}}
+                 
                   </h3>
+                  {% endfor %}
                 </div>
                 <div class="card-footer">
                   <div class="stats">

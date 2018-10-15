@@ -11,6 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use function dump;
 
 
 
@@ -45,7 +46,7 @@ class DefaultController extends Controller
        $repositoryPersonne= $em ->getRepository(Ek_Personne::class);
       
        $Personnes= $repositoryPersonne->findAll();
-      $afficheQuery = $em->createQuery(
+       $afficheQuery = $em->createQuery(
             'SELECT a.id, a.nom, a.robe, a.poid,a.image, a.numeroPuce, e.libelle, a.dateNaissance
             FROM AppBundle:Ek_Animal a INNER JOIN AppBundle:Ek_Espece e WITH a.espece = e.id
             ' );
@@ -82,19 +83,37 @@ class DefaultController extends Controller
         
        $filtre = $this -> createForm(AjoutMembreType::class);
        $filtre->handleRequest($request);
-       if ($form->isSubmitted() && $filtre->isValid()) 
-        {}
+       
+       $compteVeterinaire = $em->createQuery(
+            'SELECT COUNT(p.id) AS nb
+            FROM AppBundle:Ek_Veterinaire p ');
+       /*$compteVeterinaire->setParameters(array(
+           'v' => "veterinaire",
+        )); */
+   
+       $afficheCompteV=$compteVeterinaire->getResult();
+       dump($afficheCompteV);
         
-        
-     return $this->render('Ek_Dashboard.html.twig', array(
+        if(in_array('ROLE_ADMIN', $this->getUser()->getRoles())){
+            return $this->render('Ek_Dashboard.html.twig', array(
+                'nombreVeterinaire' => $afficheCompteV,
+         ));
+        }elseif(in_array('ROLE_FAMILLE', $this->getUser()->getRoles())){
+            return $this->render('Ek_DashboardFamille.html.twig', array(
+         ));
+        }else{
+             return $this->render('Ek_Dashboard.html.twig', array(
              'animaux' =>$afficheAnimal,
              'form' => $form->createView(),
              'personnes' => $Personnes,
              'filtre' => $filtre->createView(),
+            ));
+        }
+    
              
          
            
-        ));
+        
      
        }
      private function generateUniqueFileName()

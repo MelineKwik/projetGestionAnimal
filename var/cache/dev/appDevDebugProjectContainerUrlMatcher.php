@@ -194,12 +194,20 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'AppBundle\\Controller\\Ek_AffichageController::listeIntervenantAction',  '_route' => 'listeIntervenant',);
             }
 
-            // listeAnimaux
-            if ('/listeAnimaux' === $pathinfo) {
-                return array (  '_controller' => 'AppBundle\\Controller\\Ek_AffichageController::listeAnimauxAction',  '_route' => 'listeAnimaux',);
+            if (0 === strpos($pathinfo, '/listeAnimaux')) {
+                // listeAnimaux
+                if ('/listeAnimaux' === $pathinfo) {
+                    return array (  '_controller' => 'AppBundle\\Controller\\Ek_AffichageController::listeAnimauxAction',  '_route' => 'listeAnimaux',);
+                }
+
+                // listeAnimauxFamille
+                if ('/listeAnimauxFamille' === $pathinfo) {
+                    return array (  '_controller' => 'AppBundle\\Controller\\Ek_AffichageController::listeAnimauxFamilleAction',  '_route' => 'listeAnimauxFamille',);
+                }
+
             }
 
-            if (0 === strpos($pathinfo, '/login')) {
+            elseif (0 === strpos($pathinfo, '/login')) {
                 // fos_user_security_login
                 if ('/login' === $pathinfo) {
                     $ret = array (  '_controller' => 'fos_user.security.controller:loginAction',  '_route' => 'fos_user_security_login',);

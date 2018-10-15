@@ -98,30 +98,59 @@ class __TwigTemplate_73b339b4d92c3ddd9bf4054b17f37ff9e355aa61aff0f7f65e3599c18a1
               <p>Dashboard</p>
             </a>
           </li>
-          <li class=\"nav-item \">
+          ";
+        // line 50
+        if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("ROLE_ADMIN")) {
+            // line 51
+            echo "          <li class=\"nav-item \">
             <a class=\"nav-link\" href=\"";
-        // line 51
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("listeIntervenant");
-        echo "\">
+            // line 52
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("listeIntervenant");
+            echo "\">
               <i class=\"material-icons\">groups</i>
               <p>Les Intervenants</p>
             </a>
           </li>
-          <li class=\"nav-item \">
+          ";
+        }
+        // line 58
+        echo "          ";
+        if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("ROLE_ADMIN")) {
+            // line 59
+            echo "          <li class=\"nav-item \">
               <a class=\"nav-link\" href=\"";
-        // line 57
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("listeAnimaux");
-        echo "\" >
+            // line 60
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("listeAnimaux");
+            echo "\" >
               <i class=\"material-icons\">pets</i>
               <p>Les Animaux</p>
             </a>
           </li>
-          <li class=\"nav-item \">
+          ";
+        }
+        // line 66
+        echo "          ";
+        if (($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("ROLE_ADMIN") == false)) {
+            // line 67
+            echo "          <li class=\"nav-item \">
+              <a class=\"nav-link\" href=\"";
+            // line 68
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("listeAnimauxFamille");
+            echo "\" >
+              <i class=\"material-icons\">pets</i>
+              <p>Les Animaux</p>
+            </a>
+          </li>
+          ";
+        }
+        // line 74
+        echo "          <li class=\"nav-item \">
             <a class=\"nav-link\" href=\"./typography.html\">
               <i class=\"material-icons\">insert_invitation</i>
               <p>Les rendrez-vous</p>
             </a>
           </li>
+          
           <li class=\"nav-item \">
             <a class=\"nav-link\" href=\"./icons.html\">
               <i class=\"material-icons\">bubble_chart</i>
@@ -205,17 +234,25 @@ class __TwigTemplate_73b339b4d92c3ddd9bf4054b17f37ff9e355aa61aff0f7f65e3599c18a1
                   </p>
                 </a>
               </li>
+              <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"/logout\">
+                  <i class=\"material-icons\">arrow_forward</i>
+                  <p class=\"d-lg-none d-md-block\">
+                    Account
+                  </p>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
       </nav>
         ";
-        // line 155
+        // line 176
         $this->displayBlock('body', $context, $blocks);
-        // line 156
+        // line 177
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 157
+        // line 178
         echo "        <script>// <!&#91;CDATA&#91;
             \$('#myTab a').click(function (e) {
               e.preventDefault()
@@ -279,7 +316,7 @@ class __TwigTemplate_73b339b4d92c3ddd9bf4054b17f37ff9e355aa61aff0f7f65e3599c18a1
 
     }
 
-    // line 155
+    // line 176
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -296,7 +333,7 @@ class __TwigTemplate_73b339b4d92c3ddd9bf4054b17f37ff9e355aa61aff0f7f65e3599c18a1
 
     }
 
-    // line 156
+    // line 177
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -325,7 +362,7 @@ class __TwigTemplate_73b339b4d92c3ddd9bf4054b17f37ff9e355aa61aff0f7f65e3599c18a1
 
     public function getDebugInfo()
     {
-        return array (  300 => 156,  283 => 155,  266 => 7,  248 => 6,  219 => 157,  216 => 156,  214 => 155,  113 => 57,  104 => 51,  95 => 45,  86 => 39,  62 => 18,  57 => 16,  49 => 11,  42 => 8,  40 => 7,  36 => 6,  29 => 1,);
+        return array (  337 => 177,  320 => 176,  303 => 7,  285 => 6,  256 => 178,  253 => 177,  251 => 176,  147 => 74,  138 => 68,  135 => 67,  132 => 66,  123 => 60,  120 => 59,  117 => 58,  108 => 52,  105 => 51,  103 => 50,  95 => 45,  86 => 39,  62 => 18,  57 => 16,  49 => 11,  42 => 8,  40 => 7,  36 => 6,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -387,24 +424,37 @@ class __TwigTemplate_73b339b4d92c3ddd9bf4054b17f37ff9e355aa61aff0f7f65e3599c18a1
               <p>Dashboard</p>
             </a>
           </li>
+          {% if is_granted('ROLE_ADMIN') %}
           <li class=\"nav-item \">
             <a class=\"nav-link\" href=\"{{ path('listeIntervenant')}}\">
               <i class=\"material-icons\">groups</i>
               <p>Les Intervenants</p>
             </a>
           </li>
+          {% endif %}
+          {% if is_granted('ROLE_ADMIN') %}
           <li class=\"nav-item \">
               <a class=\"nav-link\" href=\"{{ path('listeAnimaux')}}\" >
               <i class=\"material-icons\">pets</i>
               <p>Les Animaux</p>
             </a>
           </li>
+          {% endif %}
+          {% if is_granted('ROLE_ADMIN') == false %}
+          <li class=\"nav-item \">
+              <a class=\"nav-link\" href=\"{{ path('listeAnimauxFamille')}}\" >
+              <i class=\"material-icons\">pets</i>
+              <p>Les Animaux</p>
+            </a>
+          </li>
+          {% endif %}
           <li class=\"nav-item \">
             <a class=\"nav-link\" href=\"./typography.html\">
               <i class=\"material-icons\">insert_invitation</i>
               <p>Les rendrez-vous</p>
             </a>
           </li>
+          
           <li class=\"nav-item \">
             <a class=\"nav-link\" href=\"./icons.html\">
               <i class=\"material-icons\">bubble_chart</i>
@@ -483,6 +533,14 @@ class __TwigTemplate_73b339b4d92c3ddd9bf4054b17f37ff9e355aa61aff0f7f65e3599c18a1
               <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"#pablo\">
                   <i class=\"material-icons\">person</i>
+                  <p class=\"d-lg-none d-md-block\">
+                    Account
+                  </p>
+                </a>
+              </li>
+              <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"/logout\">
+                  <i class=\"material-icons\">arrow_forward</i>
                   <p class=\"d-lg-none d-md-block\">
                     Account
                   </p>

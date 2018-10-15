@@ -30,6 +30,7 @@ use AppBundle\Form\Ek_VisiteType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 /**
  * Description of Ek_AffichageController
@@ -39,12 +40,14 @@ use Symfony\Component\HttpFoundation\Request;
 class Ek_AffichageController extends Controller {
     /**
      * @Route("/", name="dashboard")
+     * 
      */
     public function dashboardAction(Request $request)
     {
         return $this->render('Ek_Dashboard.html.twig', array(
          ));
     }
+    
     
      /**
      * @Route("/listeIntervenant", name="listeIntervenant")
@@ -237,4 +240,42 @@ class Ek_AffichageController extends Controller {
             'form3' =>$form3->createView(),
          ));
     }
+    
+    //liste Animaux qui est recueilli par la famille connecté 
+    /**
+     * @Route("/listeAnimauxFamille", name="listeAnimauxFamille")
+     */
+    public function listeAnimauxFamilleAction(Request $request)
+    {
+       $em = $this -> getDoctrine()->getManager();
+       $repositoryAnimaux= $em ->getRepository(Ek_Animal::class);  
+       $repositoryEspece= $em ->getRepository(Ek_Espece::class);
+       $repositoryPersonne= $em ->getRepository(Ek_Personne::class);
+      
+       $user=$this->getUser();
+       $afficheQuery = $em->createQuery(
+            'SELECT a.id, a.nom, a.robe, a.poid,a.image, a.numeroPuce, e.libelle, a.dateNaissance
+            FROM AppBundle:Ek_Animal a INNER JOIN AppBundle:Ek_Espece e WITH a.espece = e.id WHERE a.idUtilisateurPro = :idCo ' );
+        $afficheQuery->setParameters(array(
+           'idCo' => $user,
+        )); 
+       $afficheAnimal = $afficheQuery->getResult();
+       
+       
+      
+       
+        
+       
+        
+        
+     return $this->render('Ek_VueAnimaux.html.twig', array(
+             'animaux' =>$afficheAnimal,
+             
+             
+             
+         
+           
+        ));
+     
+       }
 }
