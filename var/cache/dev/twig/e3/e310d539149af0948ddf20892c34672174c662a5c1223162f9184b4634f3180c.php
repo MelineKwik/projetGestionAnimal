@@ -117,24 +117,31 @@ class __TwigTemplate_029b18878eb23b4c5705f2c0628d5096ae0ca78f48904c17ff67037a463
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form1"]) ? $context["form1"] : $this->getContext($context, "form1")), "date", array()), 'widget');
         echo "
                                 </div>
+                                 <div class=\"form-group\">
+                                    <label for=\"inputAddress2\">Poid</label>
+                                    ";
+        // line 52
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form1"]) ? $context["form1"] : $this->getContext($context, "form1")), "poid", array()), 'widget');
+        echo "
+                                </div>
                                 <div class=\"form-group\">
                                     <label for=\"inputAddress2\">Prochaine date de visite</label>
                                     ";
-        // line 52
+        // line 56
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form1"]) ? $context["form1"] : $this->getContext($context, "form1")), "dateSuivante", array()), 'widget');
         echo "
                                 </div>
                                 <div class=\"form-group\">
                                     <label for=\"inputAddress2\">Montant de la visite</label>
                                     ";
-        // line 56
+        // line 60
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form1"]) ? $context["form1"] : $this->getContext($context, "form1")), "montant", array()), 'widget');
         echo "
                                 </div>
                                 <div class=\"form-group\">
                                     <label for=\"inputAddress2\">Bilan de la visite</label>
                                     ";
-        // line 60
+        // line 64
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form1"]) ? $context["form1"] : $this->getContext($context, "form1")), "bilan", array()), 'widget');
         echo "
                                 </div>
@@ -142,13 +149,13 @@ class __TwigTemplate_029b18878eb23b4c5705f2c0628d5096ae0ca78f48904c17ff67037a463
                                  <button type=\"submit\" class=\"btn btn-primary\">Enregister</button>
                                  </div>
                                  ";
-        // line 65
+        // line 69
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form1"]) ? $context["form1"] : $this->getContext($context, "form1")), 'form_end');
         echo "
               </div>
               <div id=\"vaccinationValue\" style=\"display:none\">
                   ";
-        // line 68
+        // line 72
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form3"]) ? $context["form3"] : $this->getContext($context, "form3")), 'form_start');
         echo "
                                  <div>
@@ -156,28 +163,28 @@ class __TwigTemplate_029b18878eb23b4c5705f2c0628d5096ae0ca78f48904c17ff67037a463
                                 <div class=\"form-group\">
                                     <label for=\"inputAddress2\">Produit utilisé</label>
                                     ";
-        // line 73
+        // line 77
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form3"]) ? $context["form3"] : $this->getContext($context, "form3")), "produit", array()), 'widget');
         echo "
                                 </div>
                                 <div class=\"form-group\">
                                     <label for=\"inputAddress2\">Date de début de traitement</label>
                                     ";
-        // line 77
+        // line 81
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form3"]) ? $context["form3"] : $this->getContext($context, "form3")), "date", array()), 'widget');
         echo "
                                 </div>
                                 <div class=\"form-group\">
                                     <label for=\"inputAddress2\">Date de Fin de traitement</label>
                                     ";
-        // line 81
+        // line 85
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form3"]) ? $context["form3"] : $this->getContext($context, "form3")), "dateSuivante", array()), 'widget');
         echo "
                                 </div>
                                 <div class=\"form-group\">
                                     <label for=\"inputAddress2\">Montant du traitement</label>
                                     ";
-        // line 85
+        // line 89
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form3"]) ? $context["form3"] : $this->getContext($context, "form3")), "montant", array()), 'widget');
         echo "
                                 </div>
@@ -185,13 +192,13 @@ class __TwigTemplate_029b18878eb23b4c5705f2c0628d5096ae0ca78f48904c17ff67037a463
                                  <button type=\"submit\" class=\"btn btn-primary\">Enregister</button>
                                  </div>
                                  ";
-        // line 90
+        // line 94
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form3"]) ? $context["form3"] : $this->getContext($context, "form3")), 'form_end');
         echo "
               </div>
               <div id=\"traitementValue\" style=\"display:none\">  
               ";
-        // line 93
+        // line 97
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form2"]) ? $context["form2"] : $this->getContext($context, "form2")), 'form_start');
         echo "
                                  <div>
@@ -199,42 +206,42 @@ class __TwigTemplate_029b18878eb23b4c5705f2c0628d5096ae0ca78f48904c17ff67037a463
                                 <div class=\"form-group\">
                                     <label for=\"inputAddress2\">Symptôme détecté</label>
                                     ";
-        // line 98
+        // line 102
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form2"]) ? $context["form2"] : $this->getContext($context, "form2")), "symptome", array()), 'widget');
         echo "
                                 </div>
                                 <div class=\"form-group\">
                                     <label for=\"inputAddress2\">Maladie</label>
                                     ";
-        // line 102
+        // line 106
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form2"]) ? $context["form2"] : $this->getContext($context, "form2")), "maladie", array()), 'widget');
         echo "
                                 </div>
                                 <div class=\"form-group\">
                                     <label for=\"inputAddress2\">Type de traitement</label>
                                     ";
-        // line 106
+        // line 110
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form2"]) ? $context["form2"] : $this->getContext($context, "form2")), "traitement", array()), 'widget');
         echo "
                                 </div>
                                 <div class=\"form-group\">
                                     <label for=\"inputAddress2\">Date de début de traitement</label>
                                     ";
-        // line 110
+        // line 114
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form2"]) ? $context["form2"] : $this->getContext($context, "form2")), "date", array()), 'widget');
         echo "
                                 </div>
                                 <div class=\"form-group\">
                                     <label for=\"inputAddress2\">Date de Fin de traitement</label>
                                     ";
-        // line 114
+        // line 118
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form2"]) ? $context["form2"] : $this->getContext($context, "form2")), "dateSuivante", array()), 'widget');
         echo "
                                 </div>
                                 <div class=\"form-group\">
                                     <label for=\"inputAddress2\">Montant du traitement</label>
                                     ";
-        // line 118
+        // line 122
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form2"]) ? $context["form2"] : $this->getContext($context, "form2")), "montant", array()), 'widget');
         echo "
                                 </div>
@@ -242,7 +249,7 @@ class __TwigTemplate_029b18878eb23b4c5705f2c0628d5096ae0ca78f48904c17ff67037a463
                                  <button type=\"submit\" class=\"btn btn-primary\">Enregister</button>
                                  </div>
                                  ";
-        // line 123
+        // line 127
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form2"]) ? $context["form2"] : $this->getContext($context, "form2")), 'form_end');
         echo "
             </div>
@@ -279,7 +286,7 @@ class __TwigTemplate_029b18878eb23b4c5705f2c0628d5096ae0ca78f48904c17ff67037a463
 
     public function getDebugInfo()
     {
-        return array (  246 => 123,  238 => 118,  231 => 114,  224 => 110,  217 => 106,  210 => 102,  203 => 98,  195 => 93,  189 => 90,  181 => 85,  174 => 81,  167 => 77,  160 => 73,  152 => 68,  146 => 65,  138 => 60,  131 => 56,  124 => 52,  117 => 48,  109 => 43,  84 => 20,  75 => 19,  50 => 3,  41 => 2,  11 => 1,);
+        return array (  253 => 127,  245 => 122,  238 => 118,  231 => 114,  224 => 110,  217 => 106,  210 => 102,  202 => 97,  196 => 94,  188 => 89,  181 => 85,  174 => 81,  167 => 77,  159 => 72,  153 => 69,  145 => 64,  138 => 60,  131 => 56,  124 => 52,  117 => 48,  109 => 43,  84 => 20,  75 => 19,  50 => 3,  41 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -340,6 +347,10 @@ class __TwigTemplate_029b18878eb23b4c5705f2c0628d5096ae0ca78f48904c17ff67037a463
                                 <div class=\"form-group\">
                                     <label for=\"inputAddress2\">Date de la visite</label>
                                     {{ form_widget(form1.date) }}
+                                </div>
+                                 <div class=\"form-group\">
+                                    <label for=\"inputAddress2\">Poid</label>
+                                    {{ form_widget(form1.poid) }}
                                 </div>
                                 <div class=\"form-group\">
                                     <label for=\"inputAddress2\">Prochaine date de visite</label>

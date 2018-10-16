@@ -14,8 +14,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\DiscriminatorColumn(name="nature", type="string")
  * @ORM\DiscriminatorMap({"personne" = "Ek_Personne","admin" = "Ek_Admin", "transporteur" = "Ek_Transporteur", "veterinaire" = "Ek_Veterinaire", "famille" = "Ek_Famille"})
  */
-class Ek_Personne extends BaseUser
-{
+class Ek_Personne extends BaseUser {
+
     /**
      * @var int
      *
@@ -59,21 +59,18 @@ class Ek_Personne extends BaseUser
      * @ORM\Column(name="code_postale", type="string", length=20, nullable=true)
      */
     private $codePostale;
-    
-      /**
+
+    /**
      * @ORM\OneToMany(targetEntity="Ek_Animal", mappedBy="animal")
      */
     private $animal;
-     
-  
- 
+
     /**
      * Get id
      *
      * @return int
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -84,8 +81,7 @@ class Ek_Personne extends BaseUser
      *
      * @return Personne
      */
-    public function setNom($nom)
-    {
+    public function setNom($nom) {
         $this->nom = $nom;
 
         return $this;
@@ -96,8 +92,7 @@ class Ek_Personne extends BaseUser
      *
      * @return string
      */
-    public function getNom()
-    {
+    public function getNom() {
         return $this->nom;
     }
 
@@ -108,8 +103,7 @@ class Ek_Personne extends BaseUser
      *
      * @return Personne
      */
-    public function setPrenom($prenom)
-    {
+    public function setPrenom($prenom) {
         $this->prenom = $prenom;
 
         return $this;
@@ -120,8 +114,7 @@ class Ek_Personne extends BaseUser
      *
      * @return string
      */
-    public function getPrenom()
-    {
+    public function getPrenom() {
         return $this->prenom;
     }
 
@@ -132,8 +125,7 @@ class Ek_Personne extends BaseUser
      *
      * @return Personne
      */
-    public function setAdresse($adresse)
-    {
+    public function setAdresse($adresse) {
         $this->adresse = $adresse;
 
         return $this;
@@ -144,8 +136,7 @@ class Ek_Personne extends BaseUser
      *
      * @return string
      */
-    public function getAdresse()
-    {
+    public function getAdresse() {
         return $this->adresse;
     }
 
@@ -156,8 +147,7 @@ class Ek_Personne extends BaseUser
      *
      * @return Personne
      */
-    public function setTelephone($telephone)
-    {
+    public function setTelephone($telephone) {
         $this->telephone = $telephone;
 
         return $this;
@@ -168,8 +158,7 @@ class Ek_Personne extends BaseUser
      *
      * @return string
      */
-    public function getTelephone()
-    {
+    public function getTelephone() {
         return $this->telephone;
     }
 
@@ -180,8 +169,7 @@ class Ek_Personne extends BaseUser
      *
      * @return Personne
      */
-    public function setCodePostale($codePostale)
-    {
+    public function setCodePostale($codePostale) {
         $this->codePostale = $codePostale;
 
         return $this;
@@ -192,11 +180,10 @@ class Ek_Personne extends BaseUser
      *
      * @return string
      */
-    public function getCodePostale()
-    {
+    public function getCodePostale() {
         return $this->codePostale;
     }
-    
+
     function getAnimal() {
         return $this->animal;
     }
@@ -205,11 +192,4 @@ class Ek_Personne extends BaseUser
         $this->animal = $animal;
     }
 
-    
-
-
-
-
-
 }
-

@@ -32,6 +32,11 @@ class Ek_Animal
      * @ORM\Column(name="robe", type="string", length=90, nullable=true)
      */
     private $robe;
+    
+    
+    function __construct() {
+        
+    }
 
     /**
      * @var float

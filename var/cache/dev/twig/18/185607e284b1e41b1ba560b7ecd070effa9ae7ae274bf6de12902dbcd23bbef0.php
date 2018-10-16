@@ -48,79 +48,92 @@ class __TwigTemplate_6b79a59474a27f6cd0d0ccaf994730fe8b5a843b8186612660161dc7e8b
         // line 3
         echo "    <div class=\"content\">
         <div class=\"container-fluid\">
-          <div class=\"row\">
-            <div class=\"col-lg-3 col-md-6 col-sm-6\">
-              <div class=\"card card-stats\">
-                <div class=\"card-header card-header-warning card-header-icon\">
-                  <div class=\"card-icon\">
-                    <i class=\"material-icons\">group</i>
-                  </div>
-                  <p class=\"card-category\">Vétérinaire</p>
-                  <h3 class=\"card-title\">49/50
-                    <small>GB</small>
-                  </h3>
+            <div class=\"row\">
+                <div class=\"col-lg-3 col-md-6 col-sm-6\">
+                    <div class=\"card card-stats\">
+                        <div class=\"card-header card-header-warning card-header-icon\">
+                            <div class=\"card-icon\">
+                                <i class=\"material-icons\">pets</i>
+                            </div>
+                            <p class=\"card-category\">Animaux accueilli</p>
+                            ";
+        // line 13
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["nombreAnimauxUser"]) ? $context["nombreAnimauxUser"] : $this->getContext($context, "nombreAnimauxUser")));
+        foreach ($context['_seq'] as $context["_key"] => $context["nombreAnimaux"]) {
+            // line 14
+            echo "                                <h3 class=\"card-title\">";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["nombreAnimaux"], "nbAU", array()), "html", null, true);
+            echo "
+                                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['nombreAnimaux'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 16
+        echo "
+                            </h3>
+                        </div>
+                        <div class=\"card-footer\">
+                            <div class=\"stats\">
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class=\"card-footer\">
-                  <div class=\"stats\">
-                    <i class=\"material-icons text-danger\">warning</i>
-                    <a href=\"#pablo\">Get More Space...</a>
-                  </div>
+                <div class=\"col-lg-3 col-md-6 col-sm-6\">
+                    <div class=\"card card-stats\">
+                        <div class=\"card-header card-header-success card-header-icon\">
+                            <div class=\"card-icon\">
+                                <i class=\"material-icons\">airplanemode_active</i>
+                            </div>
+                            <p class=\"card-category\">Animaux parties</p>
+                            <h3 class=\"card-title\">34,245</h3>
+                        </div>
+                        <div class=\"card-footer\">
+                            <div class=\"stats\">
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                <div class=\"col-lg-3 col-md-6 col-sm-6\">
+                    <div class=\"card card-stats\">
+                        <div class=\"card-header card-header-danger card-header-icon\">
+                            <div class=\"card-icon\">
+                                <i class=\"material-icons\">domain</i>
+                            </div>
+                            <p class=\"card-category\">Nombre de déclaration d'événements</p>
+                            <h3 class=\"card-title\">75</h3>
+                        </div>
+                        <div class=\"card-footer\">
+                            <div class=\"stats\">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=\"col-lg-3 col-md-6 col-sm-6\">
+                    <div class=\"card card-stats\">
+                        <div class=\"card-header card-header-info card-header-icon\">
+                            <div class=\"card-icon\">
+                                <i class=\"material-icons\">pets</i>
+                            </div>
+                            <p class=\"card-category\">Animaux</p>
+                            <h3 class=\"card-title\">+245</h3>
+                        </div>
+                        <div class=\"card-footer\">
+                            <div class=\"stats\">
+                                <i class=\"material-icons\">update</i> Just Updated
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class=\"col-lg-3 col-md-6 col-sm-6\">
-              <div class=\"card card-stats\">
-                <div class=\"card-header card-header-success card-header-icon\">
-                  <div class=\"card-icon\">
-                    <i class=\"material-icons\">store</i>
-                  </div>
-                  <p class=\"card-category\">Famille d'accueil</p>
-                  <h3 class=\"card-title\">34,245</h3>
-                </div>
-                <div class=\"card-footer\">
-                  <div class=\"stats\">
-                    <i class=\"material-icons\">date_range</i> Last 24 Hours
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class=\"col-lg-3 col-md-6 col-sm-6\">
-              <div class=\"card card-stats\">
-                <div class=\"card-header card-header-danger card-header-icon\">
-                  <div class=\"card-icon\">
-                    <i class=\"material-icons\">local_shipping</i>
-                  </div>
-                  <p class=\"card-category\">Transporteur</p>
-                  <h3 class=\"card-title\">75</h3>
-                </div>
-                <div class=\"card-footer\">
-                  <div class=\"stats\">
-                    <i class=\"material-icons\">local_offer</i> Tracked from Github
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class=\"col-lg-3 col-md-6 col-sm-6\">
-              <div class=\"card card-stats\">
-                <div class=\"card-header card-header-info card-header-icon\">
-                  <div class=\"card-icon\">
-                       <i class=\"material-icons\">pets</i>
-                   </div>
-                  <p class=\"card-category\">Animaux</p>
-                  <h3 class=\"card-title\">+245</h3>
-                </div>
-                <div class=\"card-footer\">
-                  <div class=\"stats\">
-                    <i class=\"material-icons\">update</i> Just Updated
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-          
-         
-            
+
+
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -142,7 +155,7 @@ class __TwigTemplate_6b79a59474a27f6cd0d0ccaf994730fe8b5a843b8186612660161dc7e8b
 
     public function getDebugInfo()
     {
-        return array (  49 => 3,  40 => 2,  11 => 1,);
+        return array (  74 => 16,  65 => 14,  61 => 13,  49 => 3,  40 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -159,79 +172,80 @@ class __TwigTemplate_6b79a59474a27f6cd0d0ccaf994730fe8b5a843b8186612660161dc7e8b
 {% block body %}
     <div class=\"content\">
         <div class=\"container-fluid\">
-          <div class=\"row\">
-            <div class=\"col-lg-3 col-md-6 col-sm-6\">
-              <div class=\"card card-stats\">
-                <div class=\"card-header card-header-warning card-header-icon\">
-                  <div class=\"card-icon\">
-                    <i class=\"material-icons\">group</i>
-                  </div>
-                  <p class=\"card-category\">Vétérinaire</p>
-                  <h3 class=\"card-title\">49/50
-                    <small>GB</small>
-                  </h3>
+            <div class=\"row\">
+                <div class=\"col-lg-3 col-md-6 col-sm-6\">
+                    <div class=\"card card-stats\">
+                        <div class=\"card-header card-header-warning card-header-icon\">
+                            <div class=\"card-icon\">
+                                <i class=\"material-icons\">pets</i>
+                            </div>
+                            <p class=\"card-category\">Animaux accueilli</p>
+                            {% for nombreAnimaux in nombreAnimauxUser%}
+                                <h3 class=\"card-title\">{{nombreAnimaux.nbAU}}
+                                {% endfor %}
+
+                            </h3>
+                        </div>
+                        <div class=\"card-footer\">
+                            <div class=\"stats\">
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class=\"card-footer\">
-                  <div class=\"stats\">
-                    <i class=\"material-icons text-danger\">warning</i>
-                    <a href=\"#pablo\">Get More Space...</a>
-                  </div>
+                <div class=\"col-lg-3 col-md-6 col-sm-6\">
+                    <div class=\"card card-stats\">
+                        <div class=\"card-header card-header-success card-header-icon\">
+                            <div class=\"card-icon\">
+                                <i class=\"material-icons\">airplanemode_active</i>
+                            </div>
+                            <p class=\"card-category\">Animaux parties</p>
+                            <h3 class=\"card-title\">34,245</h3>
+                        </div>
+                        <div class=\"card-footer\">
+                            <div class=\"stats\">
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                <div class=\"col-lg-3 col-md-6 col-sm-6\">
+                    <div class=\"card card-stats\">
+                        <div class=\"card-header card-header-danger card-header-icon\">
+                            <div class=\"card-icon\">
+                                <i class=\"material-icons\">domain</i>
+                            </div>
+                            <p class=\"card-category\">Nombre de déclaration d'événements</p>
+                            <h3 class=\"card-title\">75</h3>
+                        </div>
+                        <div class=\"card-footer\">
+                            <div class=\"stats\">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=\"col-lg-3 col-md-6 col-sm-6\">
+                    <div class=\"card card-stats\">
+                        <div class=\"card-header card-header-info card-header-icon\">
+                            <div class=\"card-icon\">
+                                <i class=\"material-icons\">pets</i>
+                            </div>
+                            <p class=\"card-category\">Animaux</p>
+                            <h3 class=\"card-title\">+245</h3>
+                        </div>
+                        <div class=\"card-footer\">
+                            <div class=\"stats\">
+                                <i class=\"material-icons\">update</i> Just Updated
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class=\"col-lg-3 col-md-6 col-sm-6\">
-              <div class=\"card card-stats\">
-                <div class=\"card-header card-header-success card-header-icon\">
-                  <div class=\"card-icon\">
-                    <i class=\"material-icons\">store</i>
-                  </div>
-                  <p class=\"card-category\">Famille d'accueil</p>
-                  <h3 class=\"card-title\">34,245</h3>
-                </div>
-                <div class=\"card-footer\">
-                  <div class=\"stats\">
-                    <i class=\"material-icons\">date_range</i> Last 24 Hours
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class=\"col-lg-3 col-md-6 col-sm-6\">
-              <div class=\"card card-stats\">
-                <div class=\"card-header card-header-danger card-header-icon\">
-                  <div class=\"card-icon\">
-                    <i class=\"material-icons\">local_shipping</i>
-                  </div>
-                  <p class=\"card-category\">Transporteur</p>
-                  <h3 class=\"card-title\">75</h3>
-                </div>
-                <div class=\"card-footer\">
-                  <div class=\"stats\">
-                    <i class=\"material-icons\">local_offer</i> Tracked from Github
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class=\"col-lg-3 col-md-6 col-sm-6\">
-              <div class=\"card card-stats\">
-                <div class=\"card-header card-header-info card-header-icon\">
-                  <div class=\"card-icon\">
-                       <i class=\"material-icons\">pets</i>
-                   </div>
-                  <p class=\"card-category\">Animaux</p>
-                  <h3 class=\"card-title\">+245</h3>
-                </div>
-                <div class=\"card-footer\">
-                  <div class=\"stats\">
-                    <i class=\"material-icons\">update</i> Just Updated
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-          
-         
-            
+
+
+
 {% endblock %}
 ", "Ek_DashboardFamille.html.twig", "C:\\Users\\ekichenin.cdi\\Documents\\NetBeansProjects\\GestionAnimal\\app\\Resources\\views\\Ek_DashboardFamille.html.twig");
     }

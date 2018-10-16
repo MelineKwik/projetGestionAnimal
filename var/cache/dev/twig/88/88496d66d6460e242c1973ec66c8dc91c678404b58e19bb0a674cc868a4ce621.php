@@ -64,7 +64,7 @@ class __TwigTemplate_2cfbe38ea5608bc12b72b483729b7cad0b10ec7d38576c28626a7ac2319
                   <p class=\"card-category\">Vétérinaire</p>
                   <h3 class=\"card-title\">";
             // line 14
-            echo twig_escape_filter($this->env, $this->getAttribute($context["nbVeterinaire"], "nb", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["nbVeterinaire"], "nbV", array()), "html", null, true);
             echo "
                  
                   </h3>
@@ -77,8 +77,7 @@ class __TwigTemplate_2cfbe38ea5608bc12b72b483729b7cad0b10ec7d38576c28626a7ac2319
         echo "                </div>
                 <div class=\"card-footer\">
                   <div class=\"stats\">
-                    <i class=\"material-icons text-danger\">warning</i>
-                    <a href=\"#pablo\">Get More Space...</a>
+                
                   </div>
                 </div>
               </div>
@@ -89,12 +88,27 @@ class __TwigTemplate_2cfbe38ea5608bc12b72b483729b7cad0b10ec7d38576c28626a7ac2319
                   <div class=\"card-icon\">
                     <i class=\"material-icons\">store</i>
                   </div>
-                  <p class=\"card-category\">Famille d'accueil</p>
-                  <h3 class=\"card-title\">34,245</h3>
-                </div>
+                   ";
+        // line 32
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["nombreFamille"]) ? $context["nombreFamille"] : $this->getContext($context, "nombreFamille")));
+        foreach ($context['_seq'] as $context["_key"] => $context["nbFamille"]) {
+            // line 33
+            echo "                  <p class=\"card-category\">Famille d'accueil</p>
+                  <h3 class=\"card-title\">";
+            // line 34
+            echo twig_escape_filter($this->env, $this->getAttribute($context["nbFamille"], "nbF", array()), "html", null, true);
+            echo "</h3>
+                  ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['nbFamille'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 36
+        echo "                </div>
                 <div class=\"card-footer\">
                   <div class=\"stats\">
-                    <i class=\"material-icons\">date_range</i> Last 24 Hours
+                   
                   </div>
                 </div>
               </div>
@@ -105,12 +119,27 @@ class __TwigTemplate_2cfbe38ea5608bc12b72b483729b7cad0b10ec7d38576c28626a7ac2319
                   <div class=\"card-icon\">
                     <i class=\"material-icons\">local_shipping</i>
                   </div>
-                  <p class=\"card-category\">Transporteur</p>
-                  <h3 class=\"card-title\">75</h3>
-                </div>
+                     ";
+        // line 50
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["nombreTransporteur"]) ? $context["nombreTransporteur"] : $this->getContext($context, "nombreTransporteur")));
+        foreach ($context['_seq'] as $context["_key"] => $context["nbTransporteur"]) {
+            // line 51
+            echo "                  <p class=\"card-category\">Transporteur</p>
+                  <h3 class=\"card-title\">";
+            // line 52
+            echo twig_escape_filter($this->env, $this->getAttribute($context["nbTransporteur"], "nbT", array()), "html", null, true);
+            echo "</h3>
+                     ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['nbTransporteur'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 54
+        echo "                </div>
                 <div class=\"card-footer\">
                   <div class=\"stats\">
-                    <i class=\"material-icons\">local_offer</i> Tracked from Github
+                   
                   </div>
                 </div>
               </div>
@@ -122,11 +151,25 @@ class __TwigTemplate_2cfbe38ea5608bc12b72b483729b7cad0b10ec7d38576c28626a7ac2319
                        <i class=\"material-icons\">pets</i>
                    </div>
                   <p class=\"card-category\">Animaux</p>
-                  <h3 class=\"card-title\">+245</h3>
-                </div>
+                  ";
+        // line 69
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["nombreAnimaux"]) ? $context["nombreAnimaux"] : $this->getContext($context, "nombreAnimaux")));
+        foreach ($context['_seq'] as $context["_key"] => $context["nbAnimaux"]) {
+            // line 70
+            echo "                  <h3 class=\"card-title\">";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["nbAnimaux"], "nbA", array()), "html", null, true);
+            echo "</h3>
+                  ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['nbAnimaux'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 72
+        echo "                </div>
                 <div class=\"card-footer\">
                   <div class=\"stats\">
-                    <i class=\"material-icons\">update</i> Just Updated
+                    
                   </div>
                 </div>
               </div>
@@ -157,7 +200,7 @@ class __TwigTemplate_2cfbe38ea5608bc12b72b483729b7cad0b10ec7d38576c28626a7ac2319
 
     public function getDebugInfo()
     {
-        return array (  77 => 18,  67 => 14,  61 => 10,  57 => 9,  49 => 3,  40 => 2,  11 => 1,);
+        return array (  169 => 72,  160 => 70,  156 => 69,  139 => 54,  131 => 52,  128 => 51,  124 => 50,  108 => 36,  100 => 34,  97 => 33,  93 => 32,  77 => 18,  67 => 14,  61 => 10,  57 => 9,  49 => 3,  40 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -183,15 +226,14 @@ class __TwigTemplate_2cfbe38ea5608bc12b72b483729b7cad0b10ec7d38576c28626a7ac2319
                     <i class=\"material-icons\">group</i>
                   </div>
                   <p class=\"card-category\">Vétérinaire</p>
-                  <h3 class=\"card-title\">{{nbVeterinaire.nb}}
+                  <h3 class=\"card-title\">{{nbVeterinaire.nbV}}
                  
                   </h3>
                   {% endfor %}
                 </div>
                 <div class=\"card-footer\">
                   <div class=\"stats\">
-                    <i class=\"material-icons text-danger\">warning</i>
-                    <a href=\"#pablo\">Get More Space...</a>
+                
                   </div>
                 </div>
               </div>
@@ -202,12 +244,14 @@ class __TwigTemplate_2cfbe38ea5608bc12b72b483729b7cad0b10ec7d38576c28626a7ac2319
                   <div class=\"card-icon\">
                     <i class=\"material-icons\">store</i>
                   </div>
+                   {% for nbFamille in nombreFamille%}
                   <p class=\"card-category\">Famille d'accueil</p>
-                  <h3 class=\"card-title\">34,245</h3>
+                  <h3 class=\"card-title\">{{nbFamille.nbF}}</h3>
+                  {% endfor %}
                 </div>
                 <div class=\"card-footer\">
                   <div class=\"stats\">
-                    <i class=\"material-icons\">date_range</i> Last 24 Hours
+                   
                   </div>
                 </div>
               </div>
@@ -218,12 +262,14 @@ class __TwigTemplate_2cfbe38ea5608bc12b72b483729b7cad0b10ec7d38576c28626a7ac2319
                   <div class=\"card-icon\">
                     <i class=\"material-icons\">local_shipping</i>
                   </div>
+                     {% for nbTransporteur in nombreTransporteur%}
                   <p class=\"card-category\">Transporteur</p>
-                  <h3 class=\"card-title\">75</h3>
+                  <h3 class=\"card-title\">{{nbTransporteur.nbT}}</h3>
+                     {% endfor %}
                 </div>
                 <div class=\"card-footer\">
                   <div class=\"stats\">
-                    <i class=\"material-icons\">local_offer</i> Tracked from Github
+                   
                   </div>
                 </div>
               </div>
@@ -235,11 +281,13 @@ class __TwigTemplate_2cfbe38ea5608bc12b72b483729b7cad0b10ec7d38576c28626a7ac2319
                        <i class=\"material-icons\">pets</i>
                    </div>
                   <p class=\"card-category\">Animaux</p>
-                  <h3 class=\"card-title\">+245</h3>
+                  {% for nbAnimaux in nombreAnimaux%}
+                  <h3 class=\"card-title\">{{nbAnimaux.nbA}}</h3>
+                  {% endfor %}
                 </div>
                 <div class=\"card-footer\">
                   <div class=\"stats\">
-                    <i class=\"material-icons\">update</i> Just Updated
+                    
                   </div>
                 </div>
               </div>

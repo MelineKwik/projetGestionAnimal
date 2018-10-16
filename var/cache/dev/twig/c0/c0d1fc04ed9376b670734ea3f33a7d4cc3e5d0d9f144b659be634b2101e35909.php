@@ -48,197 +48,194 @@ class __TwigTemplate_6e6be28e72d1c70f2c4bbb7219ff2a354bec3d5e78339d762a31caf5414
         // line 3
         echo "    <div class=\"content\">
         <div class=\"container-fluid\">
-          <div class=\"row\">
-            <div class=\"col-md-12\">
-              <div class=\"card\">
-                <div class=\"card-header card-header-primary\">
-                  <h4 class=\"card-title \">Table des animaux</h4>
-                  
-                </div>
-                <div class=\"card-body\">
-                  <div class=\"table-responsive\">
-                    <table class=\"table\">
-                      <thead class=\" text-primary\">
-                        <th>Nom</th>
-                        <th>Robe</th>
-                        <th>Poids</th>
-                        <th>Photo</th>
-                        <th>Espèce</th>
-                        <th>N°puce</th>
-                        <th>Famille</th>
-                        <th>Date de Naissance</th>
-                     
-                      </thead>
-                      <tbody>
-                            <tr>
-                               ";
-        // line 28
+            <div class=\"row\">
+                <div class=\"col-md-12\">
+                    <div class=\"card\">
+                        <div class=\"card-header card-header-primary\">
+                            <h4 class=\"card-title \">Table des animaux</h4>
+
+                        </div>
+                        <div class=\"card-body\">
+                            <div class=\"table-responsive\">
+                                <table class=\"table\">
+                                    <thead class=\" text-primary\">
+                                    <th>Nom</th>
+                                    <th>Robe</th>
+                                    <th>Poids</th>
+                                    <th>Photo</th>
+                                    <th>Espèce</th>
+                                    <th>N°puce</th>
+                                    <th>Famille</th>
+                                    <th>Date de Naissance</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            ";
+        // line 27
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["animaux"]) ? $context["animaux"] : $this->getContext($context, "animaux")));
         foreach ($context['_seq'] as $context["_key"] => $context["animal"]) {
-            // line 29
-            echo "
-                               <td>";
-            // line 30
+            // line 28
+            echo "                                                <td>";
             echo twig_escape_filter($this->env, $this->getAttribute($context["animal"], "nom", array()), "html", null, true);
             echo "</td>
-                               <td>";
-            // line 31
+                                                <td>";
+            // line 29
             echo twig_escape_filter($this->env, $this->getAttribute($context["animal"], "robe", array()), "html", null, true);
             echo "</td>
-                               <td>";
-            // line 32
+                                                <td>";
+            // line 30
             echo twig_escape_filter($this->env, $this->getAttribute($context["animal"], "poid", array()), "html", null, true);
             echo " kg</td>
-                               <td><img class=\"img-responsive img-thumbnail center-block\" src=\"";
-            // line 33
+                                                <td><img class=\"img-responsive img-thumbnail center-block\" src=\"";
+            // line 31
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl(("uploads/images/" . $this->getAttribute($context["animal"], "image", array()))), "html", null, true);
             echo "\"  style='width:100px; height: 100px;'  /></td>
-                               <td>";
-            // line 34
+                                                <td>";
+            // line 32
             echo twig_escape_filter($this->env, $this->getAttribute($context["animal"], "libelle", array()), "html", null, true);
             echo "</td>
-                               <td>";
-            // line 35
+                                                <td>";
+            // line 33
             echo twig_escape_filter($this->env, $this->getAttribute($context["animal"], "numeroPuce", array()), "html", null, true);
             echo "</td>
-                               <td>";
-            // line 36
+                                                <td>";
+            // line 34
             echo twig_escape_filter($this->env, $this->getAttribute($context["animal"], "nom", array()), "html", null, true);
             echo "</td>
 
-                               <td>";
-            // line 38
+                                                <td>";
+            // line 36
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["animal"], "dateNaissance", array()), "d-m-Y H:i:s"), "html", null, true);
             echo "</td>
-                               ";
-            // line 39
+                                                ";
+            // line 37
             if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("ROLE_ADMIN")) {
-                // line 40
-                echo "                               <td><a href=\"";
+                // line 38
+                echo "                                                    <td><a href=\"";
                 echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("modifierAnimaux", array("id" => $this->getAttribute($context["animal"], "id", array()))), "html", null, true);
                 echo "\" ><img src=\"";
                 echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("/images/edit.png"), "html", null, true);
                 echo "\" ></a></td>
-                               ";
+                                                        ";
             }
-            // line 42
+            // line 40
             echo "
-                               <td><button type=\"submit\" class=\"btn btn-primary\"><a href=\"";
-            // line 43
+                                                <td><button type=\"submit\" class=\"btn btn-primary\"><a href=\"";
+            // line 41
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("formulaire", array("id" => $this->getAttribute($context["animal"], "id", array()))), "html", null, true);
             echo "\" style=\"color: white; text-decoration: none;\" >Evènement</a></button></td>
-                               <td><button type=\"submit\" class=\"btn btn-primary\">Fiche suivi</button></td>
-                           </tr>
-                            ";
+                                                <td><button type=\"submit\" class=\"btn btn-primary\">Fiche suivi</button></td>
+                                            </tr>
+                                        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['animal'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 45
+        echo "                                    </tbody>
+                                </table>
+                                ";
         // line 47
-        echo "                      </tbody>
-                    </table>
-                      ";
-        // line 49
         if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("ROLE_ADMIN")) {
-            // line 50
-            echo "                       <a class=\"btn btn-primary \" data-toggle=\"modal\" data-target=\"#myModal\"><img src=\"";
+            // line 48
+            echo "                                    <a class=\"btn btn-primary \" data-toggle=\"modal\" data-target=\"#myModal\"><img src=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("/images/animal-prints.png"), "html", null, true);
-            echo "\"  > Ajouter un animal</a>
-                       <div class=\"modal fade\" id=\"myModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
-                            <div class=\"modal-dialog\">
-                                <div class=\"modal-content\">
-                                    <div class=\"modal-header\">
-                                        <h4 class=\"modal-title\" id=\"myModalLabel\">Ajouter un animal</h4>
-                                        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>
-                                    </div>
-                                    <div class=\"modal-body\">
+            echo "\">Ajouter un animal</a>
+                                    <div class=\"modal fade\" id=\"myModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
+                                        <div class=\"modal-dialog\">
+                                            <div class=\"modal-content\">
+                                                <div class=\"modal-header\">
+                                                    <h4 class=\"modal-title\" id=\"myModalLabel\">Ajouter un animal</h4>
+                                                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>
+                                                </div>
+                                                <div class=\"modal-body\">
 
-                                            ";
-            // line 60
+                                                    ";
+            // line 58
             echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start');
             echo "
-                                            <div class=\"form-row\">
-                                              <div class=\"form-group col-md-6\">
-                                                <label for=\"inputEmail4\">Nom</label>
-                                                 ";
-            // line 64
+                                                    <div class=\"form-row\">
+                                                        <div class=\"form-group col-md-6\">
+                                                            <label for=\"inputEmail4\">Nom</label>
+                                                            ";
+            // line 62
             echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "nom", array()), 'widget', array("attr" => array("class" => "form-control")));
             echo "
-                                              </div>
-                                              <div class=\"form-group col-md-6\">
-                                                <label for=\"inputPassword4\">Robe</label>
-                                                 ";
-            // line 68
+                                                        </div>
+                                                        <div class=\"form-group col-md-6\">
+                                                            <label for=\"inputPassword4\">Robe</label>
+                                                            ";
+            // line 66
             echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "robe", array()), 'widget', array("attr" => array("class" => "form-control")));
             echo "
-                                              </div>
+                                                        </div>
 
-                                            </div>
-                                            <div class=\"form-group\">
-                                              <label for=\"inputAddress\">Poid</label>
-                                              ";
-            // line 74
+                                                    </div>
+                                                    <div class=\"form-group\">
+                                                        <label for=\"inputAddress\">Poid</label>
+                                                        ";
+            // line 72
             echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "poid", array()), 'widget', array("attr" => array("class" => "form-control")));
             echo "
-                                            </div>
-                                            <div class=\"form-group\">
-                                              <label for=\"inputAddress2\">Puce</label>
-                                             ";
-            // line 78
+                                                    </div>
+                                                    <div class=\"form-group\">
+                                                        <label for=\"inputAddress2\">Puce</label>
+                                                        ";
+            // line 76
             echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "numeroPuce", array()), 'widget', array("attr" => array("class" => "form-control")));
             echo "
-                                            </div>
-                                            <div class=\"form-row\">
-                                              <div class=\"form-group col-md-6\">
-                                                <label for=\"inputCity\">Photo</label>
-                                                ";
-            // line 83
+                                                    </div>
+                                                    <div class=\"form-row\">
+                                                        <div class=\"form-group col-md-6\">
+                                                            <label for=\"inputCity\">Photo</label>
+                                                            ";
+            // line 81
             echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "image", array()), 'widget', array("attr" => array("class" => "form-control")));
             echo "
-                                              </div>
-                                              <div class=\"form-group col-md-4\">
-                                                <label for=\"inputState\">Espèce</label>
+                                                        </div>
+                                                        <div class=\"form-group col-md-4\">
+                                                            <label for=\"inputState\">Espèce</label>
 
-                                                   ";
-            // line 88
+                                                            ";
+            // line 86
             echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "espece", array()), 'widget', array("attr" => array("class" => "form-control")));
             echo "
 
-                                              </div>
-                                              <div class=\"form-group\">
-                                                <label for=\"inputAddress2\">Date de naissance</label>
-                                                ";
-            // line 93
+                                                        </div>
+                                                        <div class=\"form-group\">
+                                                            <label for=\"inputAddress2\">Date de naissance</label>
+                                                            ";
+            // line 91
             echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "dateNaissance", array()), 'widget');
             echo "
-                                            </div>
-                                            <div class=\"form-group\">
-                                                <label for=\"inputAddress2\">Famille</label>
-                                                ";
-            // line 97
+                                                        </div>
+                                                        <div class=\"form-group\">
+                                                            <label for=\"inputAddress2\">Famille</label>
+                                                            ";
+            // line 95
             echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "nom", array()), 'widget');
             echo "
-                                            </div>
-                                             <button type=\"submit\" class=\"btn btn-primary \">Enregister</button>
-                                            ";
-            // line 100
+                                                        </div>
+                                                        <button type=\"submit\" class=\"btn btn-primary \">Enregister</button>
+                                                        ";
+            // line 98
             echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
             echo "
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                             </div>
-                        </div>
-                     </div>
-                    ";
+                                ";
         }
-        // line 107
-        echo "                  </div>
+        // line 105
+        echo "                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-          
+
         </div>
     </div>
 ";
@@ -262,7 +259,7 @@ class __TwigTemplate_6e6be28e72d1c70f2c4bbb7219ff2a354bec3d5e78339d762a31caf5414
 
     public function getDebugInfo()
     {
-        return array (  236 => 107,  226 => 100,  220 => 97,  213 => 93,  205 => 88,  197 => 83,  189 => 78,  182 => 74,  173 => 68,  166 => 64,  159 => 60,  145 => 50,  143 => 49,  139 => 47,  129 => 43,  126 => 42,  118 => 40,  116 => 39,  112 => 38,  107 => 36,  103 => 35,  99 => 34,  95 => 33,  91 => 32,  87 => 31,  83 => 30,  80 => 29,  76 => 28,  49 => 3,  40 => 2,  11 => 1,);
+        return array (  233 => 105,  223 => 98,  217 => 95,  210 => 91,  202 => 86,  194 => 81,  186 => 76,  179 => 72,  170 => 66,  163 => 62,  156 => 58,  142 => 48,  140 => 47,  136 => 45,  126 => 41,  123 => 40,  115 => 38,  113 => 37,  109 => 36,  104 => 34,  100 => 33,  96 => 32,  92 => 31,  88 => 30,  84 => 29,  79 => 28,  75 => 27,  49 => 3,  40 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -279,114 +276,112 @@ class __TwigTemplate_6e6be28e72d1c70f2c4bbb7219ff2a354bec3d5e78339d762a31caf5414
 {% block body %}
     <div class=\"content\">
         <div class=\"container-fluid\">
-          <div class=\"row\">
-            <div class=\"col-md-12\">
-              <div class=\"card\">
-                <div class=\"card-header card-header-primary\">
-                  <h4 class=\"card-title \">Table des animaux</h4>
-                  
-                </div>
-                <div class=\"card-body\">
-                  <div class=\"table-responsive\">
-                    <table class=\"table\">
-                      <thead class=\" text-primary\">
-                        <th>Nom</th>
-                        <th>Robe</th>
-                        <th>Poids</th>
-                        <th>Photo</th>
-                        <th>Espèce</th>
-                        <th>N°puce</th>
-                        <th>Famille</th>
-                        <th>Date de Naissance</th>
-                     
-                      </thead>
-                      <tbody>
-                            <tr>
-                               {% for animal in animaux%}
+            <div class=\"row\">
+                <div class=\"col-md-12\">
+                    <div class=\"card\">
+                        <div class=\"card-header card-header-primary\">
+                            <h4 class=\"card-title \">Table des animaux</h4>
 
-                               <td>{{animal.nom}}</td>
-                               <td>{{animal.robe}}</td>
-                               <td>{{animal.poid}} kg</td>
-                               <td><img class=\"img-responsive img-thumbnail center-block\" src=\"{{ asset('uploads/images/' ~ animal.image) }}\"  style='width:100px; height: 100px;'  /></td>
-                               <td>{{animal.libelle}}</td>
-                               <td>{{animal.numeroPuce}}</td>
-                               <td>{{animal.nom}}</td>
+                        </div>
+                        <div class=\"card-body\">
+                            <div class=\"table-responsive\">
+                                <table class=\"table\">
+                                    <thead class=\" text-primary\">
+                                    <th>Nom</th>
+                                    <th>Robe</th>
+                                    <th>Poids</th>
+                                    <th>Photo</th>
+                                    <th>Espèce</th>
+                                    <th>N°puce</th>
+                                    <th>Famille</th>
+                                    <th>Date de Naissance</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            {% for animal in animaux%}
+                                                <td>{{animal.nom}}</td>
+                                                <td>{{animal.robe}}</td>
+                                                <td>{{animal.poid}} kg</td>
+                                                <td><img class=\"img-responsive img-thumbnail center-block\" src=\"{{ asset('uploads/images/' ~ animal.image) }}\"  style='width:100px; height: 100px;'  /></td>
+                                                <td>{{animal.libelle}}</td>
+                                                <td>{{animal.numeroPuce}}</td>
+                                                <td>{{animal.nom}}</td>
 
-                               <td>{{animal.dateNaissance|date('d-m-Y H:i:s')}}</td>
-                               {% if is_granted('ROLE_ADMIN') %}
-                               <td><a href=\"{{ path('modifierAnimaux',{ id : animal.id }) }}\" ><img src=\"{{ asset('/images/edit.png') }}\" ></a></td>
-                               {% endif %}
+                                                <td>{{animal.dateNaissance|date('d-m-Y H:i:s')}}</td>
+                                                {% if is_granted('ROLE_ADMIN') %}
+                                                    <td><a href=\"{{ path('modifierAnimaux',{ id : animal.id }) }}\" ><img src=\"{{ asset('/images/edit.png') }}\" ></a></td>
+                                                        {% endif %}
 
-                               <td><button type=\"submit\" class=\"btn btn-primary\"><a href=\"{{ path('formulaire',{ id : animal.id })}}\" style=\"color: white; text-decoration: none;\" >Evènement</a></button></td>
-                               <td><button type=\"submit\" class=\"btn btn-primary\">Fiche suivi</button></td>
-                           </tr>
-                            {% endfor %}
-                      </tbody>
-                    </table>
-                      {% if is_granted('ROLE_ADMIN') %}
-                       <a class=\"btn btn-primary \" data-toggle=\"modal\" data-target=\"#myModal\"><img src=\"{{ asset('/images/animal-prints.png') }}\"  > Ajouter un animal</a>
-                       <div class=\"modal fade\" id=\"myModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
-                            <div class=\"modal-dialog\">
-                                <div class=\"modal-content\">
-                                    <div class=\"modal-header\">
-                                        <h4 class=\"modal-title\" id=\"myModalLabel\">Ajouter un animal</h4>
-                                        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>
-                                    </div>
-                                    <div class=\"modal-body\">
+                                                <td><button type=\"submit\" class=\"btn btn-primary\"><a href=\"{{ path('formulaire',{ id : animal.id })}}\" style=\"color: white; text-decoration: none;\" >Evènement</a></button></td>
+                                                <td><button type=\"submit\" class=\"btn btn-primary\">Fiche suivi</button></td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <a class=\"btn btn-primary \" data-toggle=\"modal\" data-target=\"#myModal\"><img src=\"{{ asset('/images/animal-prints.png') }}\">Ajouter un animal</a>
+                                    <div class=\"modal fade\" id=\"myModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
+                                        <div class=\"modal-dialog\">
+                                            <div class=\"modal-content\">
+                                                <div class=\"modal-header\">
+                                                    <h4 class=\"modal-title\" id=\"myModalLabel\">Ajouter un animal</h4>
+                                                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>
+                                                </div>
+                                                <div class=\"modal-body\">
 
-                                            {{ form_start(form) }}
-                                            <div class=\"form-row\">
-                                              <div class=\"form-group col-md-6\">
-                                                <label for=\"inputEmail4\">Nom</label>
-                                                 {{ form_widget(form.nom, {'attr':{'class':'form-control'}}) }}
-                                              </div>
-                                              <div class=\"form-group col-md-6\">
-                                                <label for=\"inputPassword4\">Robe</label>
-                                                 {{ form_widget(form.robe, {'attr':{'class':'form-control'}}) }}
-                                              </div>
+                                                    {{ form_start(form) }}
+                                                    <div class=\"form-row\">
+                                                        <div class=\"form-group col-md-6\">
+                                                            <label for=\"inputEmail4\">Nom</label>
+                                                            {{ form_widget(form.nom, {'attr':{'class':'form-control'}}) }}
+                                                        </div>
+                                                        <div class=\"form-group col-md-6\">
+                                                            <label for=\"inputPassword4\">Robe</label>
+                                                            {{ form_widget(form.robe, {'attr':{'class':'form-control'}}) }}
+                                                        </div>
 
+                                                    </div>
+                                                    <div class=\"form-group\">
+                                                        <label for=\"inputAddress\">Poid</label>
+                                                        {{ form_widget(form.poid, {'attr':{'class':'form-control'}}) }}
+                                                    </div>
+                                                    <div class=\"form-group\">
+                                                        <label for=\"inputAddress2\">Puce</label>
+                                                        {{ form_widget(form.numeroPuce, {'attr':{'class':'form-control'}}) }}
+                                                    </div>
+                                                    <div class=\"form-row\">
+                                                        <div class=\"form-group col-md-6\">
+                                                            <label for=\"inputCity\">Photo</label>
+                                                            {{ form_widget(form.image, {'attr':{'class':'form-control'}}) }}
+                                                        </div>
+                                                        <div class=\"form-group col-md-4\">
+                                                            <label for=\"inputState\">Espèce</label>
+
+                                                            {{ form_widget(form.espece, {'attr':{'class':'form-control'}}) }}
+
+                                                        </div>
+                                                        <div class=\"form-group\">
+                                                            <label for=\"inputAddress2\">Date de naissance</label>
+                                                            {{ form_widget(form.dateNaissance) }}
+                                                        </div>
+                                                        <div class=\"form-group\">
+                                                            <label for=\"inputAddress2\">Famille</label>
+                                                            {{ form_widget(form.nom) }}
+                                                        </div>
+                                                        <button type=\"submit\" class=\"btn btn-primary \">Enregister</button>
+                                                        {{form_end(form)}}
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class=\"form-group\">
-                                              <label for=\"inputAddress\">Poid</label>
-                                              {{ form_widget(form.poid, {'attr':{'class':'form-control'}}) }}
-                                            </div>
-                                            <div class=\"form-group\">
-                                              <label for=\"inputAddress2\">Puce</label>
-                                             {{ form_widget(form.numeroPuce, {'attr':{'class':'form-control'}}) }}
-                                            </div>
-                                            <div class=\"form-row\">
-                                              <div class=\"form-group col-md-6\">
-                                                <label for=\"inputCity\">Photo</label>
-                                                {{ form_widget(form.image, {'attr':{'class':'form-control'}}) }}
-                                              </div>
-                                              <div class=\"form-group col-md-4\">
-                                                <label for=\"inputState\">Espèce</label>
-
-                                                   {{ form_widget(form.espece, {'attr':{'class':'form-control'}}) }}
-
-                                              </div>
-                                              <div class=\"form-group\">
-                                                <label for=\"inputAddress2\">Date de naissance</label>
-                                                {{ form_widget(form.dateNaissance) }}
-                                            </div>
-                                            <div class=\"form-group\">
-                                                <label for=\"inputAddress2\">Famille</label>
-                                                {{ form_widget(form.nom) }}
-                                            </div>
-                                             <button type=\"submit\" class=\"btn btn-primary \">Enregister</button>
-                                            {{form_end(form)}}
                                         </div>
                                     </div>
-                             </div>
+                                {% endif %}
+                            </div>
                         </div>
-                     </div>
-                    {% endif %}
-                  </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-          
+
         </div>
     </div>
 {% endblock %}

@@ -3,15 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ekichenin.cdi/Documents/NetBeansProjects/GestionAnimal/src/AppBundle/Form/Ek_FormulaireType.php</file>
-            <file>file:/C:/Users/ekichenin.cdi/Documents/NetBeansProjects/GestionAnimal/app/Resources/views/formulaireEvenement.html.twig</file>
-            <file>file:/C:/Users/ekichenin.cdi/Documents/NetBeansProjects/GestionAnimal/app/Resources/views/Ek_addVaccination.html.twig</file>
-            <file>file:/C:/Users/ekichenin.cdi/Documents/NetBeansProjects/GestionAnimal/app/Resources/views/base.html.twig</file>
-            <file>file:/C:/Users/ekichenin.cdi/Documents/NetBeansProjects/GestionAnimal/src/AppBundle/Controller/Ek_AjouterController.php</file>
-            <file>file:/C:/Users/ekichenin.cdi/Documents/NetBeansProjects/GestionAnimal/app/Resources/views/Ek_addVisite.html.twig</file>
-            <file>file:/C:/Users/ekichenin.cdi/Documents/NetBeansProjects/GestionAnimal/app/Resources/views/Ek_addTraitement.html.twig</file>
+            <file>file:/C:/Users/ekichenin.cdi/Documents/NetBeansProjects/GestionAnimal/src/AppBundle/Entity/Ek_Personne.php</file>
+            <file>file:/C:/Users/ekichenin.cdi/Documents/NetBeansProjects/GestionAnimal/src/AppBundle/Controller/AjouterEvenementController.php</file>
+            <file>file:/C:/Users/ekichenin.cdi/Documents/NetBeansProjects/GestionAnimal/app/Resources/views/Ek_Dashboard.html.twig</file>
+            <file>file:/C:/Users/ekichenin.cdi/Documents/NetBeansProjects/GestionAnimal/src/AppBundle/Controller/DefaultController.php</file>
             <file>file:/C:/Users/ekichenin.cdi/Documents/NetBeansProjects/GestionAnimal/app/Resources/views/Ek_VueAnimaux.html.twig</file>
-            <file>file:/C:/Users/ekichenin.cdi/Documents/NetBeansProjects/GestionAnimal/src/AppBundle/Form/Ek_FamilleType.php</file>
             <file>file:/C:/Users/ekichenin.cdi/Documents/NetBeansProjects/GestionAnimal/src/AppBundle/Controller/Ek_AffichageController.php</file>
         </group>
     </open-files>

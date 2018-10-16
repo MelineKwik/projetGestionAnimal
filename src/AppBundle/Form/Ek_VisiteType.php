@@ -16,6 +16,7 @@ class Ek_VisiteType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('date', DateType::class)
+                ->add('poid')
                 ->add('dateSuivante', DateType::class)
                 ->add('montant')
                 ->add('bilan') ;

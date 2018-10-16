@@ -107,25 +107,10 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        elseif (0 === strpos($pathinfo, '/ajout')) {
+        elseif (0 === strpos($pathinfo, '/a')) {
             // ajoutEvenement
             if (0 === strpos($pathinfo, '/ajoutEvenement') && preg_match('#^/ajoutEvenement/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'ajoutEvenement')), array (  '_controller' => 'AppBundle\\Controller\\AjouterEvenementController::ajoutEvenement',));
-            }
-
-            // ajoutVisite
-            if (0 === strpos($pathinfo, '/ajoutVisite') && preg_match('#^/ajoutVisite/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ajoutVisite')), array (  '_controller' => 'AppBundle\\Controller\\Ek_AjouterController::ajouterVisite',));
-            }
-
-            // ajoutVaccination
-            if (0 === strpos($pathinfo, '/ajoutVaccination') && preg_match('#^/ajoutVaccination/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ajoutVaccination')), array (  '_controller' => 'AppBundle\\Controller\\Ek_AjouterController::ajouterVaccinationAction',));
-            }
-
-            // ajoutTraitement
-            if (0 === strpos($pathinfo, '/ajoutTraitement') && preg_match('#^/ajoutTraitement/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ajoutTraitement')), array (  '_controller' => 'AppBundle\\Controller\\Ek_AjouterController::ajouterTraitementAction',));
             }
 
             if (0 === strpos($pathinfo, '/ajoutUtilisateur')) {
@@ -151,11 +136,16 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
             }
 
-        }
+            // app_default_admin
+            if ('/admin' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::adminAction',  '_route' => 'app_default_admin',);
+            }
 
-        // app_default_admin
-        if ('/admin' === $pathinfo) {
-            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::adminAction',  '_route' => 'app_default_admin',);
+            // agenda
+            if ('/agenda' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\Ek_AffichageController::agendaAction',  '_route' => 'agenda',);
+            }
+
         }
 
         // accueil

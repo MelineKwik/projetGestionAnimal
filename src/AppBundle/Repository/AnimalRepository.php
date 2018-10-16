@@ -10,4 +10,13 @@ namespace AppBundle\Repository;
  */
 class AnimalRepository extends \Doctrine\ORM\EntityRepository
 {
+    
+    public function findOneById($value) {
+        return $this->createQueryBuilder('a')
+                ->andWhere('a.id = :val')
+                ->setParameter('val', $value)
+                ->getQuery()
+                ->getOneOrNullResult()
+                ;
+    }
 }

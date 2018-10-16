@@ -2,114 +2,112 @@
 {% block body %}
     <div class="content">
         <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-header card-header-primary">
-                  <h4 class="card-title ">Table des animaux</h4>
-                  
-                </div>
-                <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table">
-                      <thead class=" text-primary">
-                        <th>Nom</th>
-                        <th>Robe</th>
-                        <th>Poids</th>
-                        <th>Photo</th>
-                        <th>Espèce</th>
-                        <th>N°puce</th>
-                        <th>Famille</th>
-                        <th>Date de Naissance</th>
-                     
-                      </thead>
-                      <tbody>
-                            <tr>
-                               {% for animal in animaux%}
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-primary">
+                            <h4 class="card-title ">Table des animaux</h4>
 
-                               <td>{{animal.nom}}</td>
-                               <td>{{animal.robe}}</td>
-                               <td>{{animal.poid}} kg</td>
-                               <td><img class="img-responsive img-thumbnail center-block" src="{{ asset('uploads/images/' ~ animal.image) }}"  style='width:100px; height: 100px;'  /></td>
-                               <td>{{animal.libelle}}</td>
-                               <td>{{animal.numeroPuce}}</td>
-                               <td>{{animal.nom}}</td>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead class=" text-primary">
+                                    <th>Nom</th>
+                                    <th>Robe</th>
+                                    <th>Poids</th>
+                                    <th>Photo</th>
+                                    <th>Espèce</th>
+                                    <th>N°puce</th>
+                                    <th>Famille</th>
+                                    <th>Date de Naissance</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            {% for animal in animaux%}
+                                                <td>{{animal.nom}}</td>
+                                                <td>{{animal.robe}}</td>
+                                                <td>{{animal.poid}} kg</td>
+                                                <td><img class="img-responsive img-thumbnail center-block" src="{{ asset('uploads/images/' ~ animal.image) }}"  style='width:100px; height: 100px;'  /></td>
+                                                <td>{{animal.libelle}}</td>
+                                                <td>{{animal.numeroPuce}}</td>
+                                                <td>{{animal.nom}}</td>
 
-                               <td>{{animal.dateNaissance|date('d-m-Y H:i:s')}}</td>
-                               {% if is_granted('ROLE_ADMIN') %}
-                               <td><a href="{{ path('modifierAnimaux',{ id : animal.id }) }}" ><img src="{{ asset('/images/edit.png') }}" ></a></td>
-                               {% endif %}
+                                                <td>{{animal.dateNaissance|date('d-m-Y H:i:s')}}</td>
+                                                {% if is_granted('ROLE_ADMIN') %}
+                                                    <td><a href="{{ path('modifierAnimaux',{ id : animal.id }) }}" ><img src="{{ asset('/images/edit.png') }}" ></a></td>
+                                                        {% endif %}
 
-                               <td><button type="submit" class="btn btn-primary"><a href="{{ path('formulaire',{ id : animal.id })}}" style="color: white; text-decoration: none;" >Evènement</a></button></td>
-                               <td><button type="submit" class="btn btn-primary">Fiche suivi</button></td>
-                           </tr>
-                            {% endfor %}
-                      </tbody>
-                    </table>
-                      {% if is_granted('ROLE_ADMIN') %}
-                       <a class="btn btn-primary " data-toggle="modal" data-target="#myModal"><img src="{{ asset('/images/animal-prints.png') }}"  > Ajouter un animal</a>
-                       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title" id="myModalLabel">Ajouter un animal</h4>
-                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    </div>
-                                    <div class="modal-body">
+                                                <td><button type="submit" class="btn btn-primary"><a href="{{ path('formulaire',{ id : animal.id })}}" style="color: white; text-decoration: none;" >Evènement</a></button></td>
+                                                <td><button type="submit" class="btn btn-primary">Fiche suivi</button></td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <a class="btn btn-primary " data-toggle="modal" data-target="#myModal"><img src="{{ asset('/images/animal-prints.png') }}">Ajouter un animal</a>
+                                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="myModalLabel">Ajouter un animal</h4>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                </div>
+                                                <div class="modal-body">
 
-                                            {{ form_start(form) }}
-                                            <div class="form-row">
-                                              <div class="form-group col-md-6">
-                                                <label for="inputEmail4">Nom</label>
-                                                 {{ form_widget(form.nom, {'attr':{'class':'form-control'}}) }}
-                                              </div>
-                                              <div class="form-group col-md-6">
-                                                <label for="inputPassword4">Robe</label>
-                                                 {{ form_widget(form.robe, {'attr':{'class':'form-control'}}) }}
-                                              </div>
+                                                    {{ form_start(form) }}
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputEmail4">Nom</label>
+                                                            {{ form_widget(form.nom, {'attr':{'class':'form-control'}}) }}
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputPassword4">Robe</label>
+                                                            {{ form_widget(form.robe, {'attr':{'class':'form-control'}}) }}
+                                                        </div>
 
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="inputAddress">Poid</label>
+                                                        {{ form_widget(form.poid, {'attr':{'class':'form-control'}}) }}
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="inputAddress2">Puce</label>
+                                                        {{ form_widget(form.numeroPuce, {'attr':{'class':'form-control'}}) }}
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputCity">Photo</label>
+                                                            {{ form_widget(form.image, {'attr':{'class':'form-control'}}) }}
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputState">Espèce</label>
+
+                                                            {{ form_widget(form.espece, {'attr':{'class':'form-control'}}) }}
+
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="inputAddress2">Date de naissance</label>
+                                                            {{ form_widget(form.dateNaissance) }}
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="inputAddress2">Famille</label>
+                                                            {{ form_widget(form.nom) }}
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary ">Enregister</button>
+                                                        {{form_end(form)}}
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="form-group">
-                                              <label for="inputAddress">Poid</label>
-                                              {{ form_widget(form.poid, {'attr':{'class':'form-control'}}) }}
-                                            </div>
-                                            <div class="form-group">
-                                              <label for="inputAddress2">Puce</label>
-                                             {{ form_widget(form.numeroPuce, {'attr':{'class':'form-control'}}) }}
-                                            </div>
-                                            <div class="form-row">
-                                              <div class="form-group col-md-6">
-                                                <label for="inputCity">Photo</label>
-                                                {{ form_widget(form.image, {'attr':{'class':'form-control'}}) }}
-                                              </div>
-                                              <div class="form-group col-md-4">
-                                                <label for="inputState">Espèce</label>
-
-                                                   {{ form_widget(form.espece, {'attr':{'class':'form-control'}}) }}
-
-                                              </div>
-                                              <div class="form-group">
-                                                <label for="inputAddress2">Date de naissance</label>
-                                                {{ form_widget(form.dateNaissance) }}
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="inputAddress2">Famille</label>
-                                                {{ form_widget(form.nom) }}
-                                            </div>
-                                             <button type="submit" class="btn btn-primary ">Enregister</button>
-                                            {{form_end(form)}}
                                         </div>
                                     </div>
-                             </div>
+                                {% endif %}
+                            </div>
                         </div>
-                     </div>
-                    {% endif %}
-                  </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-          
+
         </div>
     </div>
 {% endblock %}

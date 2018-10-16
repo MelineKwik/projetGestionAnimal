@@ -11,15 +11,14 @@
                     <i class="material-icons">group</i>
                   </div>
                   <p class="card-category">Vétérinaire</p>
-                  <h3 class="card-title">{{nbVeterinaire.nb}}
+                  <h3 class="card-title">{{nbVeterinaire.nbV}}
                  
                   </h3>
                   {% endfor %}
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons text-danger">warning</i>
-                    <a href="#pablo">Get More Space...</a>
+                
                   </div>
                 </div>
               </div>
@@ -30,12 +29,14 @@
                   <div class="card-icon">
                     <i class="material-icons">store</i>
                   </div>
+                   {% for nbFamille in nombreFamille%}
                   <p class="card-category">Famille d'accueil</p>
-                  <h3 class="card-title">34,245</h3>
+                  <h3 class="card-title">{{nbFamille.nbF}}</h3>
+                  {% endfor %}
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">date_range</i> Last 24 Hours
+                   
                   </div>
                 </div>
               </div>
@@ -46,12 +47,14 @@
                   <div class="card-icon">
                     <i class="material-icons">local_shipping</i>
                   </div>
+                     {% for nbTransporteur in nombreTransporteur%}
                   <p class="card-category">Transporteur</p>
-                  <h3 class="card-title">75</h3>
+                  <h3 class="card-title">{{nbTransporteur.nbT}}</h3>
+                     {% endfor %}
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">local_offer</i> Tracked from Github
+                   
                   </div>
                 </div>
               </div>
@@ -63,11 +66,13 @@
                        <i class="material-icons">pets</i>
                    </div>
                   <p class="card-category">Animaux</p>
-                  <h3 class="card-title">+245</h3>
+                  {% for nbAnimaux in nombreAnimaux%}
+                  <h3 class="card-title">{{nbAnimaux.nbA}}</h3>
+                  {% endfor %}
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">update</i> Just Updated
+                    
                   </div>
                 </div>
               </div>
